@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorado Trans Youth Advocacy - Contact Federal & State Representatives</title>
+    <title>Colorado Trans Youth Advocacy - Contact Federal & State Representatives about Props 134 and 135</title>
     
     <!-- Open Graph Social Media Meta Tags -->
     <meta property="og:title" content="Urge CO Federal & State Lawmakers to Oppose Propositions 134 & 135">
@@ -235,7 +235,7 @@
 
     <!-- Section 1: Interactive Form -->
     <div class="form-section">
-        <h2>1. Your Information & Districts</h2>
+        <h2>1. Confirm Your Information & Districts</h2>
         <div class="form-group">
             <label for="userName">Full Name:</label>
             <input type="text" id="userName" placeholder="e.g. Jane Doe" autocomplete="name">
@@ -244,14 +244,14 @@
             <label for="cdSelect">U.S. Congressional District (Federal):</label>
             <select id="cdSelect">
                 <option value="">-- Select U.S. Congressional District (CD 1–8) --</option>
-                <option value="cd-1">Congressional District 1 (Denver) – Rep.-elect Melat Kiros</option>
+                <option value="cd-1">Congressional District 1 (Denver) – Rep. Melat Kiros</option>
                 <option value="cd-2">Congressional District 2 (Boulder / Fort Collins) – Rep. Joe Neguse</option>
                 <option value="cd-3">Congressional District 3 (Western Slope & Southern CO) – Rep. Jeff Hurd</option>
                 <option value="cd-4">Congressional District 4 (Eastern Plains & Douglas Co) – Rep. Lauren Boebert</option>
-                <option value="cd-5">Congressional District 5 (Colorado Springs) – Rep.-elect Jessica Killin</option>
+                <option value="cd-5">Congressional District 5 (Colorado Springs) – Rep. Jessica Killin</option>
                 <option value="cd-6">Congressional District 6 (Aurora / Centennial) – Rep. Jason Crow</option>
                 <option value="cd-7">Congressional District 7 (Lakewood / Jefferson Co) – Rep. Brittany Pettersen</option>
-                <option value="cd-8">Congressional District 8 (Adams County / Greeley) – Rep.-elect Manny Rutinel</option>
+                <option value="cd-8">Congressional District 8 (Adams County / Greeley) – Rep. Manny Rutinel</option>
             </select>
         </div>
         <div class="form-group">
@@ -291,7 +291,7 @@
                 <p class="chamber-tag">U.S. House of Representatives (Federal)</p>
                 <div class="email-display" id="cdEmailDisplay">Recipients: Select a Congressional District above</div>
                 <div class="btn-action-group">
-                    <a class="btn" id="cdBtn" href="#">Open Federal Email</a>
+                    <a class="btn" id="cdBtn" href="#">Open Congressional Email</a>
                     <button type="button" class="btn btn-secondary" id="copyCdEmailBtn">Copy Email Address</button>
                     <button type="button" class="btn btn-secondary" id="copyCdBodyBtn">Copy Email Body</button>
                     <span class="action-toast" id="cdToast">Copied!</span>
@@ -301,7 +301,7 @@
             <!-- State Senate -->
             <div class="card">
                 <h3 id="senateCardTitle">Email Your Colorado State Senator</h3>
-                <p class="chamber-tag">Colorado State Senate (General Assembly)</p>
+                <p class="chamber-tag">Colorado State Senate</p>
                 <div class="email-display" id="senateEmailDisplay">Recipients: Select a State Senate district above</div>
                 <div class="btn-action-group">
                     <a class="btn" id="senateBtn" href="#">Open State Senate Email</a>
@@ -314,7 +314,7 @@
             <!-- State House -->
             <div class="card">
                 <h3 id="houseCardTitle">Email Your Colorado State Representative</h3>
-                <p class="chamber-tag">Colorado House of Representatives (General Assembly)</p>
+                <p class="chamber-tag">Colorado House of Representatives</p>
                 <div class="email-display" id="houseEmailDisplay">Recipients: Select a State House district above</div>
                 <div class="btn-action-group">
                     <a class="btn" id="houseBtn" href="#">Open State House Email</a>
@@ -503,7 +503,7 @@ ${nameStr}`;
             } else {
                 senateCardTitle.textContent = "Email Your Colorado State Senator";
                 currentSenateEmails = ["senate.district@coleg.gov"];
-                senateEmailDisplay.textContent = "Recipients: Select a Senate district above to load direct & role emails";
+                senateEmailDisplay.textContent = "Recipients: Select a Senate district above to load representative emails";
                 currentSenateBody = getBodyText(name, "State Senator", "");
                 const senateBodyEncoded = encodeURIComponent(currentSenateBody);
                 senateBtn.href = `mailto:${currentSenateEmails[0]}?subject=${encodedSubject}&body=${senateBodyEncoded}`;
@@ -523,7 +523,7 @@ ${nameStr}`;
             } else {
                 houseCardTitle.textContent = "Email Your Colorado State Representative";
                 currentHouseEmails = ["house.district@coleg.gov"];
-                houseEmailDisplay.textContent = "Recipients: Select a House district above to load direct & role emails";
+                houseEmailDisplay.textContent = "Recipients: Select a House district above to load representative emails";
                 currentHouseBody = getBodyText(name, "State Representative", "");
                 const houseBodyEncoded = encodeURIComponent(currentHouseBody);
                 houseBtn.href = `mailto:${currentHouseEmails[0]}?subject=${encodedSubject}&body=${houseBodyEncoded}`;
