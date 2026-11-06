@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorado Trans Youth Advocacy - Contact Federal & State Lawmakers</title>
+    <title>Colorado Trans Youth Advocacy - Contact Federal & State Representatives</title>
     
     <!-- Open Graph Social Media Meta Tags -->
     <meta property="og:title" content="Urge CO Federal & State Lawmakers to Oppose Propositions 134 & 135">
-    <meta property="og:description" content="Contact incumbent and newly elected U.S. Representatives and CO State Lawmakers to protect trans youth from the newly passed Propositions 134 and 135.">
+    <meta property="og:description" content="Contact your U.S. Congressional Representative, U.S. Senators, and CO State Lawmakers to protect trans youth and demand legislative action.">
     <meta property="og:type" content="website">
 
     <style>
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             max-width: 800px;
@@ -21,8 +23,16 @@
             color: #333;
             background-color: #ffffff;
         }
-        h1 { color: #1a365d; font-size: 1.75rem; margin-top: 8px; margin-bottom: 12px; }
-        .intro-text { font-size: 0.95rem; margin-bottom: 20px; }
+        h1 {
+            color: #1a365d;
+            font-size: 1.75rem;
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
+        .intro-text {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
         .privacy-box {
             background-color: #edf2f7;
             border-left: 4px solid #4a5568;
@@ -47,9 +57,24 @@
             padding: 16px;
             margin-bottom: 24px;
         }
-        .form-section h2 { margin-top: 0; font-size: 1.2rem; color: #1e293b; margin-bottom: 16px; }
-        .form-group { margin-bottom: 12px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 4px; font-size: 0.9rem; }
+        .form-section h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
         .form-group input, .form-group select {
             width: 100%;
             padding: 12px;
@@ -58,22 +83,51 @@
             font-size: 1rem;
             background-color: #ffffff;
         }
-        .links-container { display: flex; flex-direction: column; gap: 16px; }
-        .card { border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; background-color: #ffffff; }
-        .card h3 { margin-top: 0; font-size: 1.1rem; color: #2b6cb0; margin-bottom: 4px; }
-        .card p.chamber-tag { font-size: 0.85rem; color: #64748b; margin-top: 0; margin-bottom: 8px; font-weight: bold; }
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .card {
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 16px;
+            background-color: #ffffff;
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #2b6cb0;
+            margin-bottom: 4px;
+        }
+        .card p.chamber-tag {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
         .email-display {
             font-size: 0.85rem;
             color: #4a5568;
             background-color: #edf2f7;
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-radius: 4px;
             margin-bottom: 12px;
             word-break: break-all;
         }
-        .btn-action-group { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+        .btn-action-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
         @media (min-width: 550px) {
-            .btn-action-group { flex-direction: row; align-items: center; flex-wrap: wrap; }
+            .btn-action-group {
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: wrap;
+            }
         }
         .btn {
             display: inline-block;
@@ -88,13 +142,30 @@
             cursor: pointer;
             border: none;
             width: 100%;
+            -webkit-tap-highlight-color: transparent;
         }
-        @media (min-width: 550px) { .btn { width: auto; } }
-        .btn:hover, .btn:active { background-color: #2b6cb0; }
-        .btn-secondary { background-color: #4a5568; }
-        .btn-secondary:hover, .btn-secondary:active { background-color: #2d3748; }
-        .btn-outline { background-color: transparent; color: #2b6cb0; border: 2px solid #3182ce; }
-        .btn-outline:hover { background-color: #ebf8ff; }
+        @media (min-width: 550px) {
+            .btn {
+                width: auto;
+            }
+        }
+        .btn:hover, .btn:active {
+            background-color: #2b6cb0;
+        }
+        .btn-secondary {
+            background-color: #4a5568;
+        }
+        .btn-secondary:hover, .btn-secondary:active {
+            background-color: #2d3748;
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: #2b6cb0;
+            border: 2px solid #3182ce;
+        }
+        .btn-outline:hover {
+            background-color: #ebf8ff;
+        }
         .preview-container {
             background: #edf2f7;
             padding: 16px;
@@ -102,9 +173,18 @@
             margin-bottom: 24px;
             border-left: 4px solid #3182ce;
         }
-        .preview-header { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+        .preview-header {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
         @media (min-width: 500px) {
-            .preview-header { flex-direction: row; justify-content: space-between; align-items: center; }
+            .preview-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
         }
         .preview-body {
             font-size: 0.9rem;
@@ -117,7 +197,20 @@
             max-height: 250px;
             overflow-y: auto;
         }
-        .toast, .action-toast { display: none; color: #2f855a; font-weight: bold; font-size: 0.85rem; margin-left: 8px; }
+        .toast {
+            display: none;
+            color: #2f855a;
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+        .action-toast {
+            display: none;
+            color: #2f855a;
+            font-weight: bold;
+            font-size: 0.85rem;
+            align-self: center;
+        }
         .call-script-box {
             background-color: #ffffff;
             border: 1px solid #cbd5e1;
@@ -125,6 +218,14 @@
             padding: 12px;
             margin-top: 12px;
             font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .phone-list {
+            margin-top: 8px;
+            font-size: 0.88rem;
+        }
+        .phone-list li {
+            margin-bottom: 6px;
         }
     </style>
 </head>
@@ -147,10 +248,10 @@
 
     <!-- Official District Search Helper -->
     <div class="lookup-box">
-        <strong>Don't know your district numbers?</strong><br>
+        <strong>Don't know your exact legislative or congressional district numbers?</strong><br>
         Search your street address using these official address lookup tools to find your exact district numbers before choosing below:<br>
-        <a class="btn btn-outline" href="https://leg.colorado.gov/find-my-legislator" target="_blank" rel="noopener" style="margin-top: 8px; width: auto; margin-right: 8px;">Find State Districts (leg.colorado.gov)</a>
-        <a class="btn btn-outline" href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener" style="margin-top: 8px; width: auto;">Find U.S. House District (house.gov)</a>
+        <a class="btn btn-outline" href="https://leg.colorado.gov/find-my-legislator" target="_blank" rel="noopener" style="margin-top: 10px; display: inline-block; width: auto; margin-right: 8px;">Find State Districts (leg.colorado.gov)</a>
+        <a class="btn btn-outline" href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener" style="margin-top: 10px; display: inline-block; width: auto;">Find U.S. House District (house.gov)</a>
     </div>
 
     <!-- Section 1: Interactive Form -->
@@ -164,14 +265,14 @@
             <label for="cdSelect">U.S. Congressional District (Federal):</label>
             <select id="cdSelect">
                 <option value="">-- Select U.S. Congressional District (CD 1–8) --</option>
-                <option value="cd-1">CD 1 (Denver) – Rep. Diana DeGette & Rep.-elect Melat Kiros</option>
-                <option value="cd-2">CD 2 (Boulder/Ft Collins) – Rep. Joe Neguse</option>
-                <option value="cd-3">CD 3 (Western Slope) – Rep. Lauren Boebert & Rep.-elect Jeff Hurd</option>
-                <option value="cd-4">CD 4 (Eastern Plains) – Rep. Lauren Boebert</option>
-                <option value="cd-5">CD 5 (El Paso Co) – Rep. Doug Lamborn & Rep.-elect Jeff Crank</option>
-                <option value="cd-6">CD 6 (Aurora/Centennial) – Rep. Jason Crow</option>
-                <option value="cd-7">CD 7 (Jefferson Co) – Rep. Brittany Pettersen</option>
-                <option value="cd-8">CD 8 (Adams/Greeley) – Rep. Yadira Caraveo & Rep.-elect Gabe Evans</option>
+                <option value="cd-1">Congressional District 1 (Denver) – Rep. Diana DeGette & Rep.-elect Melat Kiros</option>
+                <option value="cd-2">Congressional District 2 (Boulder / Fort Collins) – Rep. Joe Neguse</option>
+                <option value="cd-3">Congressional District 3 (Western Slope & Southern CO) – Rep. Lauren Boebert & Rep.-elect Jeff Hurd</option>
+                <option value="cd-4">Congressional District 4 (Eastern Plains & Douglas Co) – Rep. Lauren Boebert</option>
+                <option value="cd-5">Congressional District 5 (Colorado Springs) – Rep. Doug Lamborn & Rep.-elect Jeff Crank</option>
+                <option value="cd-6">Congressional District 6 (Aurora / Centennial) – Rep. Jason Crow</option>
+                <option value="cd-7">Congressional District 7 (Lakewood / Jefferson Co) – Rep. Brittany Pettersen</option>
+                <option value="cd-8">Congressional District 8 (Adams County / Greeley) – Rep. Yadira Caraveo & Rep.-elect Gabe Evans</option>
             </select>
         </div>
         <div class="form-group">
@@ -202,7 +303,7 @@
 
     <!-- Section 2: Send Emails -->
     <div class="form-section">
-        <h2>2. Contact Lawmakers</h2>
+        <h2>2. Send Emails</h2>
 
         <div class="links-container">
             <!-- Federal Congressional Representative -->
@@ -212,7 +313,7 @@
                 <div class="email-display" id="cdEmailDisplay">Recipients: Select a Congressional District above</div>
                 <div class="btn-action-group">
                     <a class="btn" id="cdIncumbentBtn" href="#" target="_blank" rel="noopener">Contact Incumbent</a>
-                    <a class="btn btn-outline" id="cdElectBtn" href="#" target="_blank" rel="noopener" style="display: none;">Contact Representative-elect</a>
+                    <a class="btn btn-outline" id="cdElectBtn" href="#" target="_blank" rel="noopener" style="display: none;">Email Representative-elect</a>
                     <button type="button" class="btn btn-secondary" id="copyCdBodyBtn">Copy Email Body</button>
                     <span class="action-toast" id="cdToast">Copied!</span>
                 </div>
@@ -225,7 +326,7 @@
                 <div class="email-display" id="senateEmailDisplay">Recipients: Select a State Senate district above</div>
                 <div class="btn-action-group">
                     <a class="btn" id="senateBtn" href="#">Open State Senate Email</a>
-                    <button type="button" class="btn btn-secondary" id="copySenateEmailBtn">Copy All Email Addresses</button>
+                    <button type="button" class="btn btn-secondary" id="copySenateEmailBtn">Copy Email Address</button>
                     <button type="button" class="btn btn-secondary" id="copySenateBodyBtn">Copy Email Body</button>
                     <span class="action-toast" id="senateToast">Copied!</span>
                 </div>
@@ -238,11 +339,32 @@
                 <div class="email-display" id="houseEmailDisplay">Recipients: Select a State House district above</div>
                 <div class="btn-action-group">
                     <a class="btn" id="houseBtn" href="#">Open State House Email</a>
-                    <button type="button" class="btn btn-secondary" id="copyHouseEmailBtn">Copy All Email Addresses</button>
+                    <button type="button" class="btn btn-secondary" id="copyHouseEmailBtn">Copy Email Address</button>
                     <button type="button" class="btn btn-secondary" id="copyHouseBodyBtn">Copy Email Body</button>
                     <span class="action-toast" id="houseToast">Copied!</span>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Phone Call Script -->
+    <div class="form-section">
+        <h2>3. Prefer to Call Your Representative?</h2>
+        <p>Calling legislative offices directly takes less than 2 minutes and is one of the most effective ways to make your voice heard on constituent record logs.</p>
+        
+        <div class="call-script-box">
+            <strong>📞 Quick Call Script:</strong>
+            <p id="callScriptText" style="margin-top: 6px; margin-bottom: 0;">
+                "Hello, my name is <span id="scriptCallerName">[YOUR NAME]</span> and I am a constituent. I am calling to ask <span id="scriptRepName">my representative</span> to take immediate action to oppose Propositions 134 and 135 and and introduce statutory repeals for these dangerous measures. Transgender youth deserve equal protections, healthcare access, and safety in Colorado. Please log my strong constituent request for repeal. Thank you."
+            </p>
+        </div>
+
+        <div class="phone-list">
+            <strong>Official Capitol Phone Directories:</strong>
+            <ul>
+                <li><strong>Colorado General Assembly Capitol Switchboard:</strong> <a href="tel:3038662901">(303) 866-2901</a></li>
+                <li><strong>U.S. House Capitol Switchboard:</strong> <a href="tel:2022243121">(202) 224-3121</a></li>
+            </ul>
         </div>
     </div>
 
@@ -280,108 +402,159 @@
         const senateToast = document.getElementById('senateToast');
         const houseToast = document.getElementById('houseToast');
 
-        // Federal Congressional Roster
+        const scriptCallerName = document.getElementById('scriptCallerName');
+        const scriptRepName = document.getElementById('scriptRepName');
+
+       // Federal Congressional Roster
         const cdRoster = {
-            "cd-1": { incumbent: "Diana DeGette", formUrl: "https://degette.house.gov/contact", elect: "Melat Kiros", electSite: "https://melatkiros.com" },
-            "cd-2": { incumbent: "Joe Neguse", formUrl: "https://neguse.house.gov/contact", elect: null },
-            "cd-3": { incumbent: "Lauren Boebert", formUrl: "https://boebert.house.gov/contact", elect: "Jeff Hurd", electSite: "https://hurd.house.gov/contact" },
-            "cd-4": { incumbent: "Lauren Boebert", formUrl: "https://boebert.house.gov/contact", elect: null },
-            "cd-5": { incumbent: "Doug Lamborn", formUrl: "https://lamborn.house.gov/contact", elect: "Jeff Crank", electSite: "https://crank.house.gov/contact" },
-            "cd-6": { incumbent: "Jason Crow", formUrl: "https://crow.house.gov/contact", elect: null },
-            "cd-7": { incumbent: "Brittany Pettersen", formUrl: "https://pettersen.house.gov/contact", elect: null },
-            "cd-8": { incumbent: "Yadira Caraveo", formUrl: "https://caraveo.house.gov/contact", elect: "Gabe Evans", electSite: "https://evans.house.gov/contact" }
+            "cd-1": { 
+                incumbent: "Diana DeGette", 
+                title: "Representative",
+                formUrl: "https://degette.house.gov/contact", 
+                elect: "Melat Kiros", 
+                electTitle: "Representative-elect",
+                electEmail: "info@kirosforco.com" 
+            },
+            "cd-2": { 
+                incumbent: "Joe Neguse", 
+                title: "Representative",
+                formUrl: "https://neguse.house.gov/contact", 
+                elect: null 
+            },
+            "cd-3": { 
+                incumbent: "Lauren Boebert", 
+                title: "Representative",
+                formUrl: "https://boebert.house.gov/contact", 
+                elect: "Jeff Hurd", 
+                electTitle: "Representative-elect",
+                electFormUrl: "https://hurd.house.gov/contact" 
+            },
+            "cd-4": { 
+                incumbent: "Lauren Boebert", 
+                title: "Representative",
+                formUrl: "https://boebert.house.gov/contact", 
+                elect: null 
+            },
+            "cd-5": { 
+                incumbent: "Doug Lamborn", 
+                title: "Representative",
+                formUrl: "https://lamborn.house.gov/contact", 
+                elect: "Jeff Crank", 
+                electTitle: "Representative-elect",
+                electFormUrl: "https://crank.house.gov/contact" 
+            },
+            "cd-6": { 
+                incumbent: "Jason Crow", 
+                title: "Representative",
+                formUrl: "https://crow.house.gov/contact", 
+                elect: null 
+            },
+            "cd-7": { 
+                incumbent: "Brittany Pettersen", 
+                title: "Representative",
+                formUrl: "https://pettersen.house.gov/contact", 
+                elect: null 
+            },
+            "cd-8": { 
+                incumbent: "Yadira Caraveo", 
+                title: "Representative",
+                formUrl: "https://caraveo.house.gov/contact", 
+                elect: "Gabe Evans", 
+                electTitle: "Representative-elect",
+                electFormUrl: "https://gabeevans.house.gov/contact" 
+            }
         };
 
         // State Senate Roster
         const senateRoster = {
-            1: { incumbent: "Byron Pelton", email: "byron.pelton.senate@coleg.gov" },
-            2: { incumbent: "Lisa Frizell", email: "lisa.frizell.senate@coleg.gov" },
-            3: { incumbent: "Nick Hinrichsen", email: "nick.hinrichsen.senate@coleg.gov", elect: "Aaron Gutierrez" },
-            4: { incumbent: "Mark Baisley", email: "mark.baisley@senate.co.com", elect: "Teddy Collins" },
-            5: { incumbent: "Marc Catlin", email: "marc.catlin.senate@coleg.gov" },
-            6: { incumbent: "Cleave Simpson", email: "cleave.simpson.senate@coleg.gov" },
-            7: { incumbent: "Janice Rich", email: "janicerichsd7@gmail.com" },
-            8: { incumbent: "Dylan Roberts", email: "dylan.roberts.senate@coleg.gov" },
-            9: { incumbent: "Lynda Zamora Wilson", email: "lynda.zamorawilson.senate@coleg.gov", elect: "Terri Carver" },
-            10: { incumbent: "Larry Liston", email: "larry.liston.senate@coleg.gov" },
-            11: { incumbent: "Tony Exum", email: "tony.exum.senate@coleg.gov" },
-            12: { incumbent: "Marc Snyder", email: "marc.snyder.senate@coleg.gov" },
-            13: { incumbent: "Scott Bright", email: "scott.bright.senate@coleg.gov" },
-            14: { incumbent: "Cathy Kipp", email: "cathy.kipp.senate@coleg.gov" },
-            15: { incumbent: "Janice Marchman", email: "janice.marchman.senate@coleg.gov" },
-            16: { incumbent: "Chris Kolker", email: "chris.kolker.senate@coleg.gov" },
-            17: { incumbent: "Katie Wallace", email: "katie.wallace.senate@coleg.gov" },
-            18: { incumbent: "Judy Amabile", email: "judy.amabile.senate@coleg.gov" },
-            19: { incumbent: "Lindsey Daugherty", email: "lindsey.daugherty.senate@coleg.gov" },
-            20: { incumbent: "Lisa Cutter", email: "lisa.cutter.senate@coleg.gov", elect: "Sheila Lieder" },
-            21: { incumbent: "Dafna Michaelson Jenet", email: "dafna.michaelson.jenet.senate@coleg.gov" },
-            22: { incumbent: "Jessie Danielson", email: "jessie.danielson.senate@coleg.gov", elect: "Monica Duran" },
-            23: { incumbent: "Barbara Kirkmeyer", email: "barbara.kirkmeyer.senate@coleg.gov" },
-            24: { incumbent: "Kyle Mullica", email: "kyle.mullica.senate@coleg.gov" },
-            25: { incumbent: "William Lindstedt", email: "william.lindstedt.senate@coleg.gov" },
-            26: { incumbent: "Jeff Bridges", email: "jeff.bridges.senate@coleg.gov" },
-            27: { incumbent: "Tom Sullivan", email: "tom.sullivan.senate@coleg.gov" },
-            28: { incumbent: "Mike Weissman", email: "mike.weissman.senate@coleg.gov" },
-            29: { incumbent: "Iman Jodeh", email: "iman.jodeh.senate@coleg.gov" },
-            30: { incumbent: "John Carson", email: "john.carson.senate@coleg.gov" },
-            31: { incumbent: "Matt Ball", email: "matt.ball.senate@coleg.gov" },
-            32: { incumbent: "Robert Rodriguez", email: "robert.rodriguez.senate@coleg.gov", elect: "Emily Sirota" },
-            33: { incumbent: "James Coleman", email: "james.coleman.senate@coleg.gov" },
-            34: { incumbent: "Julie Gonzales", email: "julie.gonzales.senate@coleg.gov", elect: "Chela Garcia Irlando" },
-            35: { incumbent: "Rod Pelton", email: "rod.pelton.senate@coleg.gov" }
+            1: { incumbent: "Byron Pelton", title: "Senator", email: "byron.pelton.senate@coleg.gov", elect: null },
+            2: { incumbent: "Lisa Frizell", title: "Senator", email: "lisa.frizell.senate@coleg.gov", elect: null },
+            3: { incumbent: "Nick Hinrichsen", title: "Senator", email: "nick.hinrichsen.senate@coleg.gov", elect: "Aaron Gutierrez", electTitle: "Senator-elect", electEmail: "info@aaronforpueblo.com" },
+            4: { incumbent: "Mark Baisley", title: "Senator", email: "mark.baisley@senate.co.com", elect: "Teddy Collins", electTitle: "Senator-elect", electEmail: "teddy@collinsforcolorado.com." },
+            5: { incumbent: "Marc Catlin", title: "Senator", email: "marc.catlin.senate@coleg.gov", elect: null },
+            6: { incumbent: "Cleave Simpson", title: "Senator", email: "cleave.simpson.senate@coleg.gov", elect: null },
+            7: { incumbent: "Janice Rich", title: "Senator", email: "janicerichsd7@gmail.com", elect: null },
+            8: { incumbent: "Dylan Roberts", title: "Senator", email: "dylan.roberts.senate@coleg.gov", elect: null },
+            9: { incumbent: "Lynda Zamora Wilson", title: "Senator", email: "lynda.zamorawilson.senate@coleg.gov", elect: "Terri Carver", electTitle: "Senator-elect", electEmail: "terri@terricarver.org" },
+            10: { incumbent: "Larry Liston", title: "Senator", email: "larry.liston.senate@coleg.gov", elect: null },
+            11: { incumbent: "Tony Exum", title: "Senator", email: "tony.exum.senate@coleg.gov", elect: null },
+            12: { incumbent: "Marc Snyder", title: "Senator", email: "marc.snyder.senate@coleg.gov", elect: null },
+            13: { incumbent: "Scott Bright", title: "Senator", email: "scott.bright.senate@coleg.gov", elect: null },
+            14: { incumbent: "Cathy Kipp", title: "Senator", email: "cathy.kipp.senate@coleg.gov", elect: null },
+            15: { incumbent: "Janice Marchman", title: "Senator", email: "janice.marchman.senate@coleg.gov", elect: null },
+            16: { incumbent: "Chris Kolker", title: "Senator", email: "chris.kolker.senate@coleg.gov", elect: null },
+            17: { incumbent: "Katie Wallace", title: "Senator", email: "katie.wallace.senate@coleg.gov", elect: null },
+            18: { incumbent: "Judy Amabile", title: "Senator", email: "judy.amabile.senate@coleg.gov", elect: null },
+            19: { incumbent: "Lindsey Daugherty", title: "Senator", email: "lindsey.daugherty.senate@coleg.gov", elect: null },
+            20: { incumbent: "Lisa Cutter", title: "Senator", email: "lisa.cutter.senate@coleg.gov", elect: "Sheila Lieder", electTitle: "Senator-elect", electEmail: "sheilaforcolorado@gmail.com" },
+            21: { incumbent: "Dafna Michaelson Jenet", title: "Senator", email: "dafna.michaelson.jenet.senate@coleg.gov", elect: null },
+            22: { incumbent: "Jessie Danielson", title: "Senator", email: "jessie.danielson.senate@coleg.gov", elect: "Monica Duran", electTitle: "Senator-elect", electEmail: "monica.duran.house@coleg.com" },
+            23: { incumbent: "Barbara Kirkmeyer", title: "Senator", email: "barbara.kirkmeyer.senate@coleg.gov", elect: null },
+            24: { incumbent: "Kyle Mullica", title: "Senator", email: "kyle.mullica.senate@coleg.gov", elect: null },
+            25: { incumbent: "William Lindstedt", title: "Senator", email: "william.lindstedt.senate@coleg.gov", elect: null },
+            26: { incumbent: "Jeff Bridges", title: "Senator", email: "jeff.bridges.senate@coleg.gov", elect: null },
+            27: { incumbent: "Tom Sullivan", title: "Senator", email: "tom.sullivan.senate@coleg.gov", elect: null },
+            28: { incumbent: "Mike Weissman", title: "Senator", email: "mike.weissman.senate@coleg.gov", elect: null },
+            29: { incumbent: "Iman Jodeh", title: "Senator", email: "iman.jodeh.senate@coleg.gov", elect: null },
+            30: { incumbent: "John Carson", title: "Senator", email: "john.carson.senate@coleg.gov", elect: null },
+            31: { incumbent: "Matt Ball", title: "Senator", email: "matt.ball.senate@coleg.gov", elect: null },
+            32: { incumbent: "Robert Rodriguez", title: "Senator", email: "robert.rodriguez.senate@coleg.gov", elect: "Emily Sirota", electTitle: "Senator-elect", electEmail: "julie.gonzales.senate@coleg.gov" },
+            33: { incumbent: "James Coleman", title: "Senator", email: "james.coleman.senate@coleg.gov", elect: null },
+            34: { incumbent: "Julie Gonzales", title: "Senator", email: "julie.gonzales.senate@coleg.gov", elect: "Chela Garcia Irlando", electTitle: "Senator-elect", electEmail: "chela@chelaforcolorado.com" },
+            35: { incumbent: "Rod Pelton", title: "Senator", email: "rod.pelton.senate@coleg.gov", elect: null }
         };
 
         // State House Roster
         const houseRoster = {
-            1: { incumbent: "Javier Mabrey", email: "javier.mabrey.house@coleg.gov" },
-            2: { incumbent: "Scott Baldermann", email: "scott.baldermann.house@coleg.gov" },
-            3: { incumbent: "Meg Froelich", email: "meg.froelich.house@coleg.gov", elect: "Gena Ozols" },
-            4: { incumbent: "Cecelia Espenoza", email: "cecelia.espenoza.house@coleg.gov" },
-            5: { incumbent: "Justine Sandoval", email: "justine.sandoval.house@coleg.gov" },
-            6: { incumbent: "Sean Camacho", email: "sean.camacho.house@coleg.gov", elect: "Iris Halpern" },
-            7: { incumbent: "Jennifer Bacon", email: "jennifer.bacon.house@coleg.gov" },
-            8: { incumbent: "Leslie Herod", email: "leslie.herod.house@coleg.gov", elect: "Lindsay Gilchrist" },
-            9: { incumbent: "Monica VanBuskirk", email: "monica.vanbuskirk.house@coleg.gov" },
-            10: { incumbent: "Junie Joseph", email: "junie.joseph.house@coleg.gov" },
-            11: { incumbent: "Karen McCormick", email: "karen.mccormick.house@coleg.gov" },
-            12: { incumbent: "Kyle Brown", email: "kyle.brown.house@coleg.gov" },
-            13: { incumbent: "Julie McCluskie", email: "Julie.Mccluskie.house@coleg.gov", elect: "Consuelo Redhorse" },
-            14: { incumbent: "Ava Flanell", email: "ava.flanell.house@coleg.gov" },
-            15: { incumbent: "Scott Bottoms", email: "scott.bottoms.house@coleg.gov" },
-            16: { incumbent: "Rebecca Keltie", email: "rebecca.keltie.house@coleg.gov", elect: "Stephanie Vigil" },
-            17: { incumbent: "Regina English", email: "regina.english.house@coleg.gov" },
-            18: { incumbent: "Amy Paschal", email: "amy.paschal.house@coleg.gov" },
-            19: { incumbent: "Jillaire McMillan", email: "jillaire.mcmillan.house@coleg.gov" },
-            20: { incumbent: "Jarvis Caldwell", email: "jarvis.caldwell.house@coleg.gov" },
-            21: { incumbent: "Mary Bradfield", email: "mary.bradfield.house@coleg.gov" },
-            22: { incumbent: "Ken DeGraaf", email: "ken.degraaf.house@coleg.gov" },
-            23: { incumbent: "Monica Duran", email: "monica.duran.house@coleg.gov" },
-            24: { incumbent: "Lisa Feret", email: "lisa.feret.house@coleg.gov" },
-            26: { incumbent: "Meghan Lukens", email: "meghan.lukens.house@coleg.gov" },
-            28: { incumbent: "Sheila Lieder", email: "sheila.lieder.house@coleg.gov" },
-            29: { incumbent: "Lori Goldstein", email: "lori.goldstein.house@coleg.gov" },
-            31: { incumbent: "Jacque Phillips", email: "jacque.phillips.house@coleg.gov" },
-            33: { incumbent: "Kenny Nguyen", email: "kenny.nguyen.house@coleg.gov" },
-            35: { incumbent: "Lorena Garcia", email: "lorena.garcia.house@coleg.gov" },
-            36: { incumbent: "Michael Carter", email: "michael.carter.house@coleg.gov" },
-            37: { incumbent: "Chad Clifford", email: "chad.clifford.house@coleg.gov" },
-            39: { incumbent: "Brandi Bradley", email: "brandi.bradley.house@coleg.gov" },
-            40: { incumbent: "Naquetta Ricks", email: "Naquetta.Ricks.house@coleg.gov" },
-            41: { incumbent: "Jamie Jackson", email: "jamie.jackson.house@coleg.gov" },
-            42: { incumbent: "Mandy Lindsay", email: "mandy.lindsay.house@coleg.gov" },
-            43: { incumbent: "Bob Marshall", email: "bob.marshall.house@coleg.gov" },
-            44: { incumbent: "Anthony Hartsook", email: "anthony.hartsook.house@coleg.gov" },
-            45: { incumbent: "Max Brooks", email: "max.brooks.house@coleg.gov" },
-            46: { incumbent: "Tisha Mauro", email: "tisha.mauro.house@coleg.gov" },
-            48: { incumbent: "Carlos Barron", email: "carlos.barron.house@coleg.gov" },
-            50: { incumbent: "Ryan Gonzalez", email: "ryan.gonzalez.house@coleg.gov", elect: "Tommy Butler" },
-            53: { incumbent: "Andrew Boesenecker", email: "andrew.boesenecker.house@coleg.gov" },
-            56: { incumbent: "Chris Richardson", email: "chris.richardson.house@coleg.gov" },
-            60: { incumbent: "Stephanie Luck", email: "stephanie.luck.house@coleg.gov" },
-            61: { incumbent: "Eliza Hamrick", email: "eliza.hamrick.house@coleg.gov" },
-            62: { incumbent: "Matthew Martinez", email: "matthew.martinez.house@coleg.gov" },
-            63: { incumbent: "Dusty Johnson", email: "dustyforcolorado@gmail.com" },
-            65: { incumbent: "Lori Garcia Sander", email: "lori.garciasander.house@coleg.gov" }
+            1: { incumbent: "Javier Mabrey", title: "Representative", email: "javier.mabrey.house@coleg.gov", elect: null },
+            2: { incumbent: "Scott Baldermann", title: "Representative", email: "scott.baldermann.house@coleg.gov", elect: null },
+            3: { incumbent: "Meg Froelich", title: "Representative", email: "meg.froelich.house@coleg.gov", elect: "Gena Ozols", electTitle: "Representative-elect", electEmail: "OzolsForHd3@gmail.com" },
+            4: { incumbent: "Cecelia Espenoza", title: "Representative", email: "cecelia.espenoza.house@coleg.gov", elect: null },
+            5: { incumbent: "Justine Sandoval", title: "Representative", email: "justine.sandoval.house@coleg.gov", elect: null },
+            6: { incumbent: "Sean Camacho", title: "Representative", email: "sean.camacho.house@coleg.gov", elect: "Iris Halpern", electTitle: "Representative-elect", electEmail: "Iris.halpern@iris4colorado.com" },
+            7: { incumbent: "Jennifer Bacon", title: "Representative", email: "jennifer.bacon.house@coleg.gov", elect: null },
+            8: { incumbent: "Leslie Herod", title: "Representative", email: "leslie.herod.house@coleg.gov", elect: "Lindsay Gilchrist", electTitle: "Representative-elect", electEmail: "info@gilchristforcolorado.com" },
+            9: { incumbent: "Monica VanBuskirk", title: "Representative", email: "monica.vanbuskirk.house@coleg.gov", elect: null },
+            10: { incumbent: "Junie Joseph", title: "Representative", email: "junie.joseph.house@coleg.gov", elect: null },
+            11: { incumbent: "Karen McCormick", title: "Representative", email: "karen.mccormick.house@coleg.gov", elect: null },
+            12: { incumbent: "Kyle Brown", title: "Representative", email: "kyle.brown.house@coleg.gov", elect: null },
+            13: { incumbent: "Julie McCluskie", title: "Representative", email: "Julie.Mccluskie.house@coleg.gov", elect: "Consuelo Redhorse", electTitle: "Representative-elect", electEmail: "" },
+            14: { incumbent: "Ava Flanell", title: "Representative", email: "ava.flanell.house@coleg.gov", elect: null },
+            15: { incumbent: "Scott Bottoms", title: "Representative", email: "scott.bottoms.house@coleg.gov", elect: null },
+            16: { incumbent: "Rebecca Keltie", title: "Representative", email: "rebecca.keltie.house@coleg.gov", elect: "Stephanie Vigil", electTitle: "Representative-elect", electEmail: "info@stephanievigil.com" },
+            17: { incumbent: "Regina English", title: "Representative", email: "regina.english.house@coleg.gov", elect: null },
+            18: { incumbent: "Amy Paschal", title: "Representative", email: "amy.paschal.house@coleg.gov", elect: null },
+            19: { incumbent: "Jillaire McMillan", title: "Representative", email: "jillaire.mcmillan.house@coleg.gov", elect: null },
+            20: { incumbent: "Jarvis Caldwell", title: "Representative", email: "jarvis.caldwell.house@coleg.gov", elect: null },
+            21: { incumbent: "Mary Bradfield", title: "Representative", email: "mary.bradfield.house@coleg.gov", elect: null },
+            22: { incumbent: "Ken DeGraaf", title: "Representative", email: "ken.degraaf.house@coleg.gov", elect: null },
+            23: { incumbent: "Monica Duran", title: "Representative", email: "monica.duran.house@coleg.gov", elect: null },
+            24: { incumbent: "Lisa Feret", title: "Representative", email: "lisa.feret.house@coleg.gov", elect: null },
+            26: { incumbent: "Meghan Lukens", title: "Representative", email: "meghan.lukens.house@coleg.gov", elect: null },
+            28: { incumbent: "Sheila Lieder", title: "Representative", email: "sheila.lieder.house@coleg.gov", elect: null },
+            29: { incumbent: "Lori Goldstein", title: "Representative", email: "lori.goldstein.house@coleg.gov", elect: null },
+            31: { incumbent: "Jacque Phillips", title: "Representative", email: "jacque.phillips.house@coleg.gov", elect: null },
+            33: { incumbent: "Kenny Nguyen", title: "Representative", email: "kenny.nguyen.house@coleg.gov", elect: null },
+            35: { incumbent: "Lorena Garcia", title: "Representative", email: "lorena.garcia.house@coleg.gov", elect: null },
+            36: { incumbent: "Michael Carter", title: "Representative", email: "michael.carter.house@coleg.gov", elect: null },
+            37: { incumbent: "Chad Clifford", title: "Representative", email: "chad.clifford.house@coleg.gov", elect: null },
+            39: { incumbent: "Brandi Bradley", title: "Representative", email: "brandi.bradley.house@coleg.gov", elect: null },
+            40: { incumbent: "Naquetta Ricks", title: "Representative", email: "Naquetta.Ricks.house@coleg.gov", elect: null },
+            41: { incumbent: "Jamie Jackson", title: "Representative", email: "jamie.jackson.house@coleg.gov", elect: null },
+            42: { incumbent: "Mandy Lindsay", title: "Representative", email: "mandy.lindsay.house@coleg.gov", elect: null },
+            43: { incumbent: "Bob Marshall", title: "Representative", email: "bob.marshall.house@coleg.gov", elect: null },
+            44: { incumbent: "Anthony Hartsook", title: "Representative", email: "anthony.hartsook.house@coleg.gov", elect: null },
+            45: { incumbent: "Max Brooks", title: "Representative", email: "max.brooks.house@coleg.gov", elect: null },
+            46: { incumbent: "Tisha Mauro", title: "Representative", email: "tisha.mauro.house@coleg.gov", elect: null },
+            48: { incumbent: "Carlos Barron", title: "Representative", email: "carlos.barron.house@coleg.gov", elect: null },
+            50: { incumbent: "Ryan Gonzalez", title: "Representative", email: "ryan.gonzalez.house@coleg.gov", elect: "Tommy Butler", electTitle: "Representative-elect", electEmail: "butlerforhd50@gmail.com" },
+            53: { incumbent: "Andrew Boesenecker", title: "Representative", email: "andrew.boesenecker.house@coleg.gov", elect: null },
+            56: { incumbent: "Chris Richardson", title: "Representative", email: "chris.richardson.house@coleg.gov", elect: null },
+            60: { incumbent: "Stephanie Luck", title: "Representative", email: "stephanie.luck.house@coleg.gov", elect: null },
+            61: { incumbent: "Eliza Hamrick", title: "Representative", email: "eliza.hamrick.house@coleg.gov", elect: null },
+            62: { incumbent: "Matthew Martinez", title: "Representative", email: "matthew.martinez.house@coleg.gov", elect: null },
+            63: { incumbent: "Dusty Johnson", title: "Representative", email: "dustyforcolorado@gmail.com", elect: null },
+            65: { incumbent: "Lori Garcia Sander", title: "Representative", email: "lori.garciasander.house@coleg.gov", elect: null }
         };
 
         function resolveDistrictContact(distNum, dataObj, chamber) {
@@ -389,7 +562,11 @@
             let names = dataObj.incumbent;
 
             if (dataObj.elect) {
-                emails.push(`${chamber}.district${distNum}@coleg.gov`);
+                if (dataObj.electEmail) {
+                    emails.push(dataObj.electEmail);
+                } else {
+                    emails.push(`${chamber}.district${distNum}@coleg.gov`);
+                }
                 names += ` & Rep.-elect ${dataObj.elect}`;
             }
 
@@ -412,7 +589,7 @@
                 const opt = document.createElement('option');
                 opt.value = i;
                 const info = houseRoster[i];
-                const electTag = info.elect ? ` & Elect ${info.elect}` : '';
+                const electTag = info && info.elect ? ` & Elect ${info.elect}` : '';
                 opt.textContent = `House District ${i} – Rep. ${info.incumbent}${electTag}`;
                 houseSelect.appendChild(opt);
             }
@@ -420,6 +597,7 @@
 
         const subject = "Legislative Action Required: Oppose and Repeal Propositions 134 and 135";
 
+        // ORIGINAL EXACT EMAIL BODY FUNCTION RESTORED WORD-FOR-WORD
         function getBodyText(senderName, recipientTitle, recipientName) {
             const nameStr = senderName.trim() !== "" ? senderName.trim() : "[YOUR NAME]";
             const titleStr = recipientTitle ? recipientTitle : "Representative / Senator";
@@ -454,26 +632,46 @@ ${nameStr}`;
             const hDist = houseSelect.value;
             const encodedSubject = encodeURIComponent(subject);
 
+            // Update call script names
+            scriptCallerName.textContent = name.trim() !== "" ? name.trim() : "[YOUR NAME]";
+            if (cdKey && cdRoster[cdKey]) {
+                const rep = cdRoster[cdKey];
+                scriptRepName.textContent = rep.elect ? `${rep.title} ${rep.incumbent} and ${rep.electTitle} ${rep.elect}` : `${rep.title} ${rep.incumbent}`;
+            } else if (sDist && senateRoster[sDist]) {
+                scriptRepName.textContent = `Senator ${senateRoster[sDist].incumbent}`;
+            } else if (hDist && houseRoster[hDist]) {
+                scriptRepName.textContent = `Representative ${houseRoster[hDist].incumbent}`;
+            } else {
+                scriptRepName.textContent = "my representative";
+            }
+
+            // Default preview text uses exact original template
             previewEl.textContent = getBodyText(name, "Representative / Senator", "");
 
-            // Federal CD updates (Dual Contact Buttons)
+            // Federal CD updates
             if (cdKey && cdRoster[cdKey]) {
                 const rep = cdRoster[cdKey];
                 const repNameStr = rep.elect ? `${rep.incumbent} & Rep.-elect ${rep.elect}` : rep.incumbent;
-                cdCardTitle.textContent = `Contact CD-${cdKey.slice(-1)} (${repNameStr})`;
+                cdCardTitle.textContent = `Email ${rep.incumbent}${rep.elect ? ' & ' + rep.elect : ''} (${cdKey.toUpperCase()})`;
                 
                 if (rep.elect) {
+                    const electContactLabel = rep.electEmail ? `Email: ${rep.electEmail}` : 'Official Contact Portal';
                     cdEmailDisplay.innerHTML = `
                         <strong>Sitting Representative:</strong> Rep. ${rep.incumbent} (Official Webform)<br>
-                        <strong>Representative-elect:</strong> ${rep.elect} (Transition Contact)
+                        <strong>Representative-elect:</strong> ${rep.elect} (${electContactLabel})
                     `;
                     cdIncumbentBtn.href = rep.formUrl;
                     cdIncumbentBtn.textContent = `Webform: Rep. ${rep.incumbent}`;
                     cdIncumbentBtn.style.display = "inline-block";
                     
-                    if (rep.electSite) {
-                        cdElectBtn.href = rep.electSite;
-                        cdElectBtn.textContent = `Contact ${rep.elect}`;
+                    if (rep.electEmail) {
+                        const electBodyEncoded = encodeURIComponent(getBodyText(name, "Representative-elect", rep.elect));
+                        cdElectBtn.href = `mailto:${rep.electEmail}?subject=${encodedSubject}&body=${electBodyEncoded}`;
+                        cdElectBtn.textContent = `Email ${rep.elect} (${rep.electEmail})`;
+                        cdElectBtn.style.display = "inline-block";
+                    } else if (rep.electFormUrl) {
+                        cdElectBtn.href = rep.electFormUrl;
+                        cdElectBtn.textContent = `Webform: ${rep.elect}`;
                         cdElectBtn.style.display = "inline-block";
                     } else {
                         cdElectBtn.style.display = "none";
@@ -489,7 +687,7 @@ ${nameStr}`;
                 currentCdBody = getBodyText(name, "Representative", repNameStr);
             } else {
                 cdCardTitle.textContent = "Email Your U.S. Congressional Representative";
-                cdEmailDisplay.textContent = "Recipients: Select a Congressional District above to load contact links";
+                cdEmailDisplay.textContent = "Recipients: Select a Congressional District above to load representative emails";
                 cdIncumbentBtn.href = "https://www.house.gov/representatives/find-your-representative";
                 cdIncumbentBtn.textContent = "Find Congressional Form";
                 cdIncumbentBtn.style.display = "inline-block";
@@ -501,14 +699,14 @@ ${nameStr}`;
             if (sDist && senateRoster[sDist]) {
                 const res = resolveDistrictContact(sDist, senateRoster[sDist], "senate");
                 currentSenateEmails = res.emails;
-                senateCardTitle.textContent = `Email Sen. ${res.names} (SD-${sDist})`;
+                senateCardTitle.textContent = `Email Sen. ${res.names} (Senate District ${sDist})`;
                 senateEmailDisplay.innerHTML = `<strong>Recipients:</strong> ${currentSenateEmails.join(', ')}`;
                 currentSenateBody = getBodyText(name, "Senator", res.names);
                 senateBtn.href = `mailto:${currentSenateEmails.join(',')}?subject=${encodedSubject}&body=${encodeURIComponent(currentSenateBody)}`;
             } else {
                 senateCardTitle.textContent = "Email Your Colorado State Senator";
                 currentSenateEmails = ["senate.district@coleg.gov"];
-                senateEmailDisplay.textContent = "Recipients: Select a Senate district above";
+                senateEmailDisplay.textContent = "Recipients: Select a Senate district above to load representative emails";
                 currentSenateBody = getBodyText(name, "State Senator", "");
                 senateBtn.href = `mailto:${currentSenateEmails[0]}?subject=${encodedSubject}&body=${encodeURIComponent(currentSenateBody)}`;
             }
@@ -517,14 +715,14 @@ ${nameStr}`;
             if (hDist && houseRoster[hDist]) {
                 const res = resolveDistrictContact(hDist, houseRoster[hDist], "house");
                 currentHouseEmails = res.emails;
-                houseCardTitle.textContent = `Email Rep. ${res.names} (HD-${hDist})`;
+                houseCardTitle.textContent = `Email Rep. ${res.names} (House District ${hDist})`;
                 houseEmailDisplay.innerHTML = `<strong>Recipients:</strong> ${currentHouseEmails.join(', ')}`;
                 currentHouseBody = getBodyText(name, "Representative", res.names);
                 houseBtn.href = `mailto:${currentHouseEmails.join(',')}?subject=${encodedSubject}&body=${encodeURIComponent(currentHouseBody)}`;
             } else {
                 houseCardTitle.textContent = "Email Your Colorado State Representative";
                 currentHouseEmails = ["house.district@coleg.gov"];
-                houseEmailDisplay.textContent = "Recipients: Select a House district above";
+                houseEmailDisplay.textContent = "Recipients: Select a House district above to load representative emails";
                 currentHouseBody = getBodyText(name, "State Representative", "");
                 houseBtn.href = `mailto:${currentHouseEmails[0]}?subject=${encodedSubject}&body=${encodeURIComponent(currentHouseBody)}`;
             }
