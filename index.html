@@ -458,7 +458,16 @@
             65: "Lori Saine"
         };
 
+        // Explicit email overrides for any rep whose direct address doesn't follow standard firstName.lastName@coleg.gov
+        const emailOverrides = {
+            "James Coleman": "james.coleman.senate@coleg.gov" // Update this string if a different format is required
+        };
+
         function formatNameEmail(fullName, chamber) {
+            // Check override dictionary first
+            if (emailOverrides[fullName]) {
+                return emailOverrides[fullName];
+            }
             const parts = fullName.toLowerCase().replace(/[^a-z\s]/g, '').trim().split(/\s+/);
             const firstName = parts[0];
             const lastName = parts[parts.length - 1];
@@ -542,7 +551,12 @@ ${nameStr}`;
                 const rep = cdRoster[cdKey];
                 currentCdEmails = rep.emails;
                 cdCardTitle.textContent = `Email ${rep.title} ${rep.name} (${cdKey.toUpperCase()})`;
-                cdEmailDisplay.textContent = `Recipient: ${currentCdEmails.join(', ')}`;
+                
+                // Add transition note if representative-elect
+                const isElect = rep.title.includes("elect");
+                const noteText = isElect ? " (Includes active transition & official contact addresses)" : "";
+                cdEmailDisplay.textContent = `Recipients: ${currentCdEmails.join(', ')}${noteText}`;
+                
                 currentCdBody = getBodyText(name, rep.title, rep.name);
                 const cdBodyEncoded = encodeURIComponent(currentCdBody);
                 cdBtn.href = `mailto:${currentCdEmails.join(',')}?subject=${encodedSubject}&body=${cdBodyEncoded}`;
@@ -553,20 +567,6 @@ ${nameStr}`;
                 currentCdBody = getBodyText(name, "Congressional Representative", "");
                 const cdBodyEncoded = encodeURIComponent(currentCdBody);
                 cdBtn.href = `mailto:${currentCdEmails[0]}?subject=${encodedSubject}&body=${cdBodyEncoded}`;
-            }
-            if (cdKey && cdRoster[cdKey]) {
-                const rep = cdRoster[cdKey];
-                currentCdEmails = rep.emails;
-                cdCardTitle.textContent = `Email ${rep.title} ${rep.name} (${cdKey.toUpperCase()})`;
-                
-                // Add transition note if representative-elect
-                const isElect = rep.title.includes("elect");
-                const noteText = isElect ? " (Includes active transition & official contact addresses)" : "";
-                cdEmailDisplay.textContent = `Recipients: ${currentCdEmails.join(', ')}${noteText}`;
-                
-                currentCdBody = getBodyText(name, rep.title, rep.name);
-                const cdBodyEncoded = encodeURIComponent(currentCdBody);
-                cdBtn.href = `mailto:${currentCdEmails.join(',')}?subject=${encodedSubject}&body=${cdBodyEncoded}`;
             }
 
             // State Senate updates
