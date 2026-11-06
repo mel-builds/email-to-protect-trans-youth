@@ -399,17 +399,29 @@
 
         const scriptCallerName = document.getElementById('scriptCallerName');
         const scriptRepName = document.getElementById('scriptRepName');
-
-        // Federal Congressional Roster (CD 1-8)
+    
+        // Federal Congressional Roster (CD 1-8) with Transition & Sworn-in Emails
         const cdRoster = {
-            "cd-1": { name: "Melat Kiros", title: "Representative-elect", emails: ["melat.kiros@mail.house.gov", "mel.esterman@gmail.com"] },
+            "cd-1": { 
+                name: "Melat Kiros", 
+                title: "Representative-elect", 
+                emails: ["melat.kiros@mail.house.gov", "mel.esterman@gmail.com", "info@melatkiros.com"] 
+            },
             "cd-2": { name: "Joe Neguse", title: "Representative", emails: ["Rep.Neguse@mail.house.gov"] },
             "cd-3": { name: "Jeff Hurd", title: "Representative", emails: ["Rep.Hurd@mail.house.gov"] },
             "cd-4": { name: "Lauren Boebert", title: "Representative", emails: ["Rep.Boebert@mail.house.gov"] },
-            "cd-5": { name: "Jessica Killin", title: "Representative-elect", emails: ["Jessica.Killin@mail.house.gov"] },
+            "cd-5": { 
+                name: "Jessica Killin", 
+                title: "Representative-elect", 
+                emails: ["Jessica.Killin@mail.house.gov", "info@jessicakillin.com"] 
+            },
             "cd-6": { name: "Jason Crow", title: "Representative", emails: ["Rep.Crow@mail.house.gov"] },
             "cd-7": { name: "Brittany Pettersen", title: "Representative", emails: ["Rep.Pettersen@mail.house.gov"] },
-            "cd-8": { name: "Manny Rutinel", title: "Representative-elect", emails: ["Manny.Rutinel@mail.house.gov"] }
+            "cd-8": { 
+                name: "Manny Rutinel", 
+                title: "Representative-elect", 
+                emails: ["Manny.Rutinel@mail.house.gov", "manny.rutinel.house@coleg.gov", "info@mannyrutinel.com"] 
+            }
         };
 
         // Colorado Senate Roster (35 Districts)
@@ -539,6 +551,20 @@ ${nameStr}`;
                 currentCdBody = getBodyText(name, "Congressional Representative", "");
                 const cdBodyEncoded = encodeURIComponent(currentCdBody);
                 cdBtn.href = `mailto:${currentCdEmails[0]}?subject=${encodedSubject}&body=${cdBodyEncoded}`;
+            }
+            if (cdKey && cdRoster[cdKey]) {
+                const rep = cdRoster[cdKey];
+                currentCdEmails = rep.emails;
+                cdCardTitle.textContent = `Email ${rep.title} ${rep.name} (${cdKey.toUpperCase()})`;
+                
+                // Add transition note if representative-elect
+                const isElect = rep.title.includes("elect");
+                const noteText = isElect ? " (Includes active transition & official contact addresses)" : "";
+                cdEmailDisplay.textContent = `Recipients: ${currentCdEmails.join(', ')}${noteText}`;
+                
+                currentCdBody = getBodyText(name, rep.title, rep.name);
+                const cdBodyEncoded = encodeURIComponent(currentCdBody);
+                cdBtn.href = `mailto:${currentCdEmails.join(',')}?subject=${encodedSubject}&body=${cdBodyEncoded}`;
             }
 
             // State Senate updates
