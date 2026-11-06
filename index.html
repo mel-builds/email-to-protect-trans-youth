@@ -1,199 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colorado Trans Youth Advocacy - Contact Federal & State Representatives</title>
-<meta property="og:title" content="Urge CO Federal & State Lawmakers to Oppose Propositions 134 & 135">
-<meta property="og:description" content="Contact your U.S. Congressional Representative, U.S. Senators, and CO State Lawmakers to protect trans youth and demand legislative action.">
-<meta property="og:type" content="website">
-<style>
-*{box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;max-width:800px;margin:0 auto;padding:16px;line-height:1.6;color:#333;background:#fff}
-h1{color:#1a365d;font-size:1.75rem;margin:8px 0 12px}
-h2{margin-top:0;font-size:1.2rem;color:#1e293b}
-.intro-text{font-size:.95rem;margin-bottom:20px}
-.note{background:#edf2f7;border-left:4px solid #4a5568;padding:12px 16px;border-radius:6px;font-size:.88rem;color:#2d3748;margin-bottom:20px}
-.note.blue{border-left-color:#3182ce;background:#f7fafc}
-.note a{color:#2b6cb0;font-weight:bold}
-.lookup-box{background:#ebf8ff;border:1px solid #bee3f8;border-radius:8px;padding:16px;margin-bottom:20px;font-size:.9rem}
-.lookup-box .btn{margin:10px 8px 0 0}
-.form-section{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:8px;padding:16px;margin-bottom:24px}
-.form-group{margin-bottom:12px}
-.form-group:last-child{margin-bottom:0}
-.form-group label{display:block;font-weight:bold;margin-bottom:4px;font-size:.9rem}
-.form-group input,.form-group select{width:100%;padding:12px;border:1px solid #94a3b8;border-radius:6px;font-size:1rem;background:#fff}
-.links-container{display:flex;flex-direction:column;gap:16px}
-.card{border:1px solid #cbd5e1;border-radius:8px;padding:16px;background:#fff}
-.card h3{margin:0 0 4px;font-size:1.1rem;color:#2b6cb0}
-.chamber-tag{font-size:.85rem;color:#64748b;margin:0 0 8px;font-weight:bold}
-.email-display{font-size:.85rem;color:#4a5568;background:#edf2f7;padding:6px 10px;border-radius:4px;margin-bottom:12px;word-break:break-all}
-.btn-action-group{display:flex;flex-direction:column;gap:8px;margin-top:8px}
-.btn{display:inline-block;text-align:center;background:#3182ce;color:#fff;text-decoration:none;padding:10px 14px;border-radius:6px;font-weight:bold;font-size:.9rem;cursor:pointer;border:2px solid transparent;width:100%;font-family:inherit;-webkit-tap-highlight-color:transparent}
-.btn:hover,.btn:active{background:#2b6cb0}
-.btn-secondary{background:#4a5568}
-.btn-secondary:hover,.btn-secondary:active{background:#2d3748}
-.btn-outline{background:transparent;color:#2b6cb0;border-color:#3182ce}
-.btn-outline:hover{background:#ebf8ff}
-.btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
-.btn:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #f6ad55;outline-offset:2px}
-@media(min-width:550px){.btn-action-group{flex-direction:row;align-items:center;flex-wrap:wrap}.btn{width:auto}}
-.preview-container{background:#edf2f7;padding:16px;border-radius:8px;margin-bottom:24px;border-left:4px solid #3182ce}
-.preview-header{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
-@media(min-width:500px){.preview-header{flex-direction:row;justify-content:space-between;align-items:center}}
-.preview-body{font-size:.9rem;white-space:pre-wrap;word-break:break-word;background:#fff;padding:12px;border-radius:6px;border:1px solid #e2e8f0;max-height:250px;overflow-y:auto}
-.toast{visibility:hidden;color:#2f855a;font-weight:bold;font-size:.85rem;margin-left:8px}
-.toast.show{visibility:visible}
-.call-script-box{background:#fff;border:1px solid #cbd5e1;border-radius:6px;padding:12px;margin-top:12px;font-size:.9rem}
-.phone-list{margin-top:8px;font-size:.88rem}
-.phone-list li{margin-bottom:6px}
-</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Colorado Trans Youth Advocacy - Contact the Governor & State Legislators</title>
+
+	<!-- Open Graph social media preview tags -->
+	<meta property="og:title" content="Urge Colorado’s Governor & State Lawmakers to Oppose Propositions 134 & 135">
+	<meta property="og:description" content="Contact Colorado’s Governor, your State Senator, and your State Representative to protect trans youth and demand legislative action.">
+	<meta property="og:type" content="website">
+
+	<style>
+		/* ---------- Base ---------- */
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 16px;
+			line-height: 1.6;
+			color: #333;
+			background: #fff;
+		}
+
+		/* Elements with the "hidden" attribute stay hidden even when a class sets display */
+		[hidden] {
+			display: none !important;
+		}
+
+		h1 {
+			color: #1a365d;
+			font-size: 1.75rem;
+			margin: 8px 0 12px;
+		}
+
+		h2 {
+			margin-top: 0;
+			font-size: 1.2rem;
+			color: #1e293b;
+		}
+
+		.intro-text {
+			font-size: 0.95rem;
+			margin-bottom: 20px;
+		}
+
+		/* ---------- Notice boxes ---------- */
+		.note {
+			background: #edf2f7;
+			border-left: 4px solid #4a5568;
+			padding: 12px 16px;
+			border-radius: 6px;
+			font-size: 0.88rem;
+			color: #2d3748;
+			margin-bottom: 20px;
+		}
+
+		.note.blue {
+			border-left-color: #3182ce;
+			background: #f7fafc;
+		}
+
+		.note a {
+			color: #2b6cb0;
+			font-weight: bold;
+		}
+
+		.lookup-box {
+			background: #ebf8ff;
+			border: 1px solid #bee3f8;
+			border-radius: 8px;
+			padding: 16px;
+			margin-bottom: 20px;
+			font-size: 0.9rem;
+		}
+
+		.lookup-box .btn {
+			margin: 10px 8px 0 0;
+		}
+
+		/* ---------- Form sections ---------- */
+		.form-section {
+			background: #f1f5f9;
+			border: 1px solid #cbd5e1;
+			border-radius: 8px;
+			padding: 16px;
+			margin-bottom: 24px;
+		}
+
+		.form-group {
+			margin-bottom: 12px;
+		}
+
+		.form-group:last-child {
+			margin-bottom: 0;
+		}
+
+		.form-group label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 4px;
+			font-size: 0.9rem;
+		}
+
+		.form-group input,
+		.form-group select {
+			width: 100%;
+			padding: 12px;
+			border: 1px solid #94a3b8;
+			border-radius: 6px;
+			font-size: 1rem;
+			background: #fff;
+		}
+
+		/* ---------- Contact cards ---------- */
+		.links-container {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+		}
+
+		.card {
+			border: 1px solid #cbd5e1;
+			border-radius: 8px;
+			padding: 16px;
+			background: #fff;
+		}
+
+		.card h3 {
+			margin: 0 0 4px;
+			font-size: 1.1rem;
+			color: #2b6cb0;
+		}
+
+		.chamber-tag {
+			font-size: 0.85rem;
+			color: #64748b;
+			margin: 0 0 8px;
+			font-weight: bold;
+		}
+
+		.email-display {
+			font-size: 0.85rem;
+			color: #4a5568;
+			background: #edf2f7;
+			padding: 6px 10px;
+			border-radius: 4px;
+			margin-bottom: 12px;
+			word-break: break-all;
+		}
+
+		/* ---------- Buttons ---------- */
+		.btn-action-group {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			margin-top: 8px;
+		}
+
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 44px; /* comfortable tap target on phones */
+			width: 100%;
+			padding: 10px 14px;
+			background: #3182ce;
+			color: #fff;
+			text-align: center;
+			text-decoration: none;
+			font-family: inherit;
+			font-size: 0.9rem;
+			font-weight: bold;
+			border: 2px solid transparent;
+			border-radius: 6px;
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		.btn:hover,
+		.btn:active {
+			background: #2b6cb0;
+		}
+
+		.btn-secondary {
+			background: #4a5568;
+		}
+
+		.btn-secondary:hover,
+		.btn-secondary:active {
+			background: #2d3748;
+		}
+
+		.btn-outline {
+			background: transparent;
+			color: #2b6cb0;
+			border-color: #3182ce;
+		}
+
+		.btn-outline:hover {
+			background: #ebf8ff;
+		}
+
+		/* Links with no destination yet look dimmed and can't be clicked */
+		.btn[aria-disabled="true"] {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+
+		/* Visible outline for keyboard users */
+		.btn:focus-visible,
+		select:focus-visible,
+		input:focus-visible,
+		textarea:focus-visible {
+			outline: 3px solid #f6ad55;
+			outline-offset: 2px;
+		}
+
+		/* On wider screens, buttons sit side by side */
+		@media (min-width: 550px) {
+			.btn-action-group {
+				flex-direction: row;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+
+			.btn {
+				width: auto;
+			}
+		}
+
+		/* ---------- Editable message ---------- */
+		.preview-container {
+			background: #edf2f7;
+			padding: 16px;
+			border-radius: 8px;
+			margin-bottom: 24px;
+			border-left: 4px solid #3182ce;
+		}
+
+		.preview-header {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			margin-bottom: 12px;
+		}
+
+		.preview-header label {
+			font-size: 0.9rem;
+		}
+
+		@media (min-width: 500px) {
+			.preview-header {
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+
+		textarea {
+			width: 100%;
+			padding: 12px;
+			border: 1px solid #94a3b8;
+			border-radius: 6px;
+			font: inherit;
+			font-size: 0.9rem;
+			line-height: 1.5;
+			background: #fff;
+			resize: vertical;
+		}
+
+		.sub {
+			font-size: 0.8rem;
+			color: #4a5568;
+			margin: 8px 0 0;
+		}
+
+		/* "Copied!" message: reserves its space so the layout doesn't jump */
+		.toast {
+			visibility: hidden;
+			color: #2f855a;
+			font-weight: bold;
+			font-size: 0.85rem;
+			margin-left: 8px;
+		}
+
+		.toast.show {
+			visibility: visible;
+		}
+
+		/* ---------- Call script ---------- */
+		.call-script-box {
+			background: #fff;
+			border: 1px solid #cbd5e1;
+			border-radius: 6px;
+			padding: 12px;
+			margin-top: 12px;
+			font-size: 0.9rem;
+		}
+
+		.phone-list {
+			margin-top: 8px;
+			font-size: 0.88rem;
+		}
+
+		.phone-list li {
+			margin-bottom: 6px;
+		}
+	</style>
 </head>
 <body>
-<h1>Action Alert: Protect Trans Youth in Colorado</h1>
-<p class="intro-text">
-Propositions 134 and 135 are dangerous measures. These propositions restrict the rights of transgender youth to participate in school sports and limit their access to essential, medically necessary gender-affirming healthcare. They are vague, poorly written, and enable dangerous consequences that extend well beyond their stated purpose. Instead of supporting children and families, they open the door to government intrusion into private decisions about healthcare, education, and participation in everyday life.<br><br>
-The good news is that with our incoming legislation, we have a chance to push for these to be changed or even abandoned altogether. To take advantage of this chance, we need to urge our legislators to do something with their new power. With historic democratic wins, these people can do something.<br><br>
-<strong>It’s on us to make sure they do. Contact our lawmakers right now using this email generator.</strong>
-</p>
 
-<div class="note"><strong>🔒 Privacy Notice:</strong> None of the data you enter on this page is stored, saved, or transmitted to any server. This application runs entirely inside your web browser to help you populate your email client.</div>
+	<h1>Action Alert: Protect Trans Youth in Colorado</h1>
 
-<div class="note blue"><strong>📩 Report Broken Emails / Feedback:</strong> Notice an address bouncing or a representative update needed? DM me on Instagram at <a href="https://instagram.com/allsmelthatendsmel" target="_blank" rel="noopener">@allsmelthatendsmel</a> and I'll update the roster!</div>
+	<p class="intro-text">
+		Propositions 134 and 135 are dangerous measures. These propositions restrict the rights of transgender youth to participate in school sports and limit their access to essential, medically necessary gender-affirming healthcare. They are vague, poorly written, and enable dangerous consequences that extend well beyond their stated purpose. Instead of supporting children and families, they open the door to government intrusion into private decisions about healthcare, education, and participation in everyday life.
+		<br><br>
+		The good news is that with our incoming legislation, we have a chance to push for these to be changed or even abandoned altogether. To take advantage of this chance, we need to urge our legislators to do something with their new power. With historic democratic wins, these people can do something.
+		<br><br>
+		<strong>It’s on us to make sure they do. Contact our lawmakers right now using this email generator.</strong>
+	</p>
 
-<div class="lookup-box">
-<strong>Don't know your exact legislative or congressional district numbers?</strong><br>
-Search your street address using these official address lookup tools to find your exact district numbers before choosing below:<br>
-<a class="btn btn-outline" href="https://leg.colorado.gov/find-my-legislator" target="_blank" rel="noopener">Find State Districts (leg.colorado.gov)</a>
-<a class="btn btn-outline" href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">Find U.S. House District (house.gov)</a>
-</div>
+	<!-- Privacy disclaimer -->
+	<div class="note">
+		<strong>🔒 Privacy Notice:</strong> None of the data you enter on this page is stored, saved, or transmitted to any server. This application runs entirely inside your web browser to help you populate your email client.
+	</div>
 
-<div class="form-section">
-<h2>1. Your Information & Districts</h2>
-<div class="form-group"><label for="userName">Full Name:</label><input type="text" id="userName" placeholder="e.g. Jane Doe" autocomplete="name"></div>
-<div class="form-group"><label for="cdSelect">U.S. Congressional District (Federal):</label><select id="cdSelect"><option value="">-- Select U.S. Congressional District (CD 1–8) --</option></select></div>
-<div class="form-group"><label for="senateSelect">State Senate District (CO General Assembly):</label><select id="senateSelect"><option value="">-- Select State Senate District (1–35) --</option></select></div>
-<div class="form-group"><label for="houseSelect">State House District (CO General Assembly):</label><select id="houseSelect"><option value="">-- Select State House District (1–65) --</option></select></div>
-</div>
+	<!-- Feedback / roster corrections -->
+	<div class="note blue">
+		<strong>📩 Report Broken Emails / Feedback:</strong> Notice an address bouncing or a representative update needed? DM me on Instagram at <a href="https://instagram.com/allsmelthatendsmel" target="_blank" rel="noopener">@allsmelthatendsmel</a> and I'll update the roster!
+	</div>
 
-<div class="preview-container">
-<div class="preview-header">
-<strong>Email Preview:</strong>
-<div><button type="button" class="btn btn-secondary" id="copyBtn">Copy Text to Clipboard</button><span class="toast" id="copyToast" role="status">Copied!</span></div>
-</div>
-<div class="preview-body" id="previewText"></div>
-</div>
+	<!-- Official district lookup -->
+	<div class="lookup-box">
+		<strong>Don't know your exact legislative district numbers?</strong><br>
+		Search your street address using this official address lookup tool to find your exact district numbers before choosing below:<br>
+		<a class="btn btn-outline" href="https://leg.colorado.gov/find-my-legislator" target="_blank" rel="noopener">Find State Districts (leg.colorado.gov)</a>
+	</div>
 
-<div class="form-section">
-<h2>2. Send Emails</h2>
-<div class="links-container">
-<div class="card">
-<h3 id="cdTitle">Email Your U.S. Congressional Representative</h3>
-<p class="chamber-tag">U.S. House of Representatives (Federal)</p>
-<div class="email-display" id="cdInfo"></div>
-<div class="btn-action-group">
-<a class="btn" id="cdBtn" target="_blank" rel="noopener">Find Congressional Form</a>
-<a class="btn btn-outline" id="cdElectBtn" hidden>Email Representative-elect</a>
-<button type="button" class="btn btn-secondary" id="cdCopyBody">Copy Email Body</button>
-<span class="toast" id="cdToast" role="status">Copied!</span>
-</div>
-</div>
-<div class="card">
-<h3 id="senateTitle">Email Your Colorado State Senator</h3>
-<p class="chamber-tag">Colorado State Senate (General Assembly)</p>
-<div class="email-display" id="senateInfo"></div>
-<div class="btn-action-group">
-<a class="btn" id="senateBtn" aria-disabled="true">Open State Senate Email</a>
-<button type="button" class="btn btn-secondary" id="senateCopyEmail">Copy Email Address</button>
-<button type="button" class="btn btn-secondary" id="senateCopyBody">Copy Email Body</button>
-<span class="toast" id="senateToast" role="status">Copied!</span>
-</div>
-</div>
-<div class="card">
-<h3 id="houseTitle">Email Your Colorado State Representative</h3>
-<p class="chamber-tag">Colorado House of Representatives (General Assembly)</p>
-<div class="email-display" id="houseInfo"></div>
-<div class="btn-action-group">
-<a class="btn" id="houseBtn" aria-disabled="true">Open State House Email</a>
-<button type="button" class="btn btn-secondary" id="houseCopyEmail">Copy Email Address</button>
-<button type="button" class="btn btn-secondary" id="houseCopyBody">Copy Email Body</button>
-<span class="toast" id="houseToast" role="status">Copied!</span>
-</div>
-</div>
-</div>
-</div>
+	<!-- ===== Step 1: Name and districts ===== -->
+	<div class="form-section">
+		<h2>1. Your Information & Districts</h2>
 
-<div class="form-section">
-<h2>3. Prefer to Call Your Representative?</h2>
-<p>Calling legislative offices directly takes less than 2 minutes and is one of the most effective ways to make your voice heard on constituent record logs.</p>
-<div class="call-script-box">
-<strong>📞 Quick Call Script:</strong>
-<p style="margin:6px 0 0">"Hello, my name is <span id="scriptName">[YOUR NAME]</span> and I am a constituent. I am calling to ask <span id="scriptRep">my representative</span> to take immediate action to oppose Propositions 134 and 135 and introduce statutory repeals for these dangerous measures. Transgender youth deserve equal protections, healthcare access, and safety in Colorado. Please log my strong constituent request for repeal. Thank you."</p>
-</div>
-<div class="phone-list"><strong>Official Capitol Phone Directories:</strong>
-<ul>
-<li><strong>Colorado General Assembly Capitol Switchboard:</strong> <a href="tel:3038662901">(303) 866-2901</a></li>
-<li><strong>U.S. House Capitol Switchboard:</strong> <a href="tel:2022243121">(202) 224-3121</a></li>
-</ul></div>
-</div>
+		<div class="form-group">
+			<label for="userName">Full Name:</label>
+			<input type="text" id="userName" placeholder="e.g. Jane Doe" autocomplete="name">
+		</div>
 
-<script>
-// ---------- ROSTERS (edit here) ----------
-// Federal: [area, incumbent, webform, electName?, electEmail?]
-const CD = {
- 1:["Denver","Diana DeGette","https://degette.house.gov/contact","Melat Kiros","info@kirosforco.com"],
- 2:["Boulder / Fort Collins","Joe Neguse","https://neguse.house.gov/contact"],
- 3:["Western Slope & Southern CO","Jeff Hurd","https://hurd.house.gov/contact"],
- 4:["Eastern Plains & Douglas Co","Lauren Boebert","https://boebert.house.gov/contact","Eileen Laubacher","info@eileenforcolorado.com"],
- 5:["Colorado Springs","Jeff Crank","https://crank.house.gov/contact","Jessica Killin","info@killinforcolorado.com"],
- 6:["Aurora / Centennial","Jason Crow","https://crow.house.gov/contact"],
- 7:["Lakewood / Jefferson Co","Brittany Pettersen","https://pettersen.house.gov/contact"],
- 8:["Adams County / Greeley","Gabe Evans","https://gabeevans.house.gov/contact","Manny Rutinel","info@rutinelforcolorado.com"]
-};
-// State: district: [incumbent, electName?, electEmail?]. Incumbent email is first.last.<chamber>@coleg.gov unless in OVERRIDE.
-const SENATE = {
- 1:["Byron Pelton"],2:["Lisa Frizell"],3:["Nick Hinrichsen","Aaron Gutierrez","info@aaronforpueblo.com"],
- 4:["Mark Baisley","Teddy Collins","teddy@collinsforcolorado.com"],5:["Marc Catlin"],6:["Cleave Simpson"],7:["Janice Rich"],
- 8:["Dylan Roberts"],9:["Lynda Zamora Wilson","Terri Carver","terri@terricarver.org"],10:["Larry Liston"],11:["Tony Exum"],
- 12:["Marc Snyder"],13:["Scott Bright"],14:["Cathy Kipp"],15:["Janice Marchman"],16:["Chris Kolker"],17:["Katie Wallace"],
- 18:["Judy Amabile"],19:["Lindsey Daugherty"],20:["Lisa Cutter","Sheila Lieder","sheilaforcolorado@gmail.com"],
- 21:["Adrienne Benavidez"],22:["Jessie Danielson","Monica Duran","monica.duran.house@coleg.gov"],23:["Barbara Kirkmeyer"],
- 24:["Kyle Mullica"],25:["William Lindstedt"],26:["Jeff Bridges"],27:["Tom Sullivan"],28:["Mike Weissman"],29:["Iman Jodeh"],
- 30:["John Carson"],31:["Matt Ball"],32:["Robert Rodriguez","Emily Sirota","emily.sirota.house@coleg.gov"],33:["James Coleman"],
- 34:["Julie Gonzales","Chela Garcia Irlando","chela@chelaforcolorado.com"],35:["Rod Pelton"]
-};
-const HOUSE = {
- 1:["Javier Mabrey"],2:["Steven Woodrow"],3:["Meg Froelich","Gena Ozols","OzolsForHd3@gmail.com"],4:["Cecelia Espenoza"],
- 5:["Alex Valdez"],6:["Sean Camacho","Iris Halpern","Iris.halpern@iris4colorado.com"],7:["Jennifer Bacon"],
- 8:["Lindsay Gilchrist"],9:["Emily Sirota"],10:["Junie Joseph"],
- 11:["Karen McCormick"],12:["Kyle Brown"],13:["Julie McCluskie","Consuelo Redhorse","voteredhorse@gmail.com"],14:["Ava Flanell"],15:["Scott Bottoms"],
- 16:["Rebecca Keltie","Stephanie Vigil","info@stephanievigil.com"],17:["Regina English"],18:["Amy Paschal"],19:["Dan Woog"],
- 20:["Jarvis Caldwell"],21:["Mary Bradfield"],22:["Ken DeGraaf"],23:["Monica Duran"],24:["Lisa Feret"],26:["Meghan Lukens"],
- 28:["Sheila Lieder"],29:["Lori Goldstein"],31:["Jacque Phillips"],33:["Kenny Nguyen"],35:["Lorena Garcia"],36:["Michael Carter"],
- 37:["Chad Clifford"],39:["Brandi Bradley"],40:["Naquetta Ricks"],41:["Jamie Jackson"],42:["Mandy Lindsay"],43:["Bob Marshall"],
- 44:["Anthony Hartsook"],45:["Max Brooks"],46:["Tisha Mauro"],48:["Carlos Barron"],50:["Ryan Gonzalez","Tommy Butler","butlerforhd50@gmail.com"],
- 53:["Andrew Boesenecker"],56:["Chris Richardson"],60:["Stephanie Luck"],61:["Eliza Hamrick"],62:["Matthew Martinez"],
- 63:["Dusty Johnson"],65:["Lori Garcia Sander"],
- 25:["Tammy Story"],27:["Brianna Titone","Danielle Varda","danielle@vardaforcolorado.com"],30:["Rebekah Stewart"],32:["María González","Chris VanDijk","chris@chris4colorado.com"],
- 34:["Jenny Willford"],38:["Gretchen Rydin"],47:["Ty Winter"],49:["Lesley Smith"],51:["Ron Weinberg"],52:["Yara Zokaie"],
- 54:["Matt Soper"],55:["Rick Taggart"],57:["Elizabeth Velasco"],58:["Larry Don Suckla"],59:["Katie Stewart"],64:["Scott Slaugh"]
-};
-const OVERRIDE = {
- "senate:4":"mark.baisley@senate.co.com",
- "house:54":"matthew.soper.house@coleg.gov",
- "house:58":"larry.suckla.house@coleg.gov",
- "house:63":"dustyforcolorado@gmail.com"
-};
+		<div class="form-group">
+			<label for="senateSelect">State Senate District (CO General Assembly):</label>
+			<select id="senateSelect">
+				<option value="">-- Select State Senate District (1–35) --</option>
+			</select>
+		</div>
 
-// ---------- HELPERS ----------
-const $ = id => document.getElementById(id);
-const SUBJECT = "Legislative Action Required: Oppose and Repeal Propositions 134 and 135";
+		<div class="form-group">
+			<label for="houseSelect">State House District (CO General Assembly):</label>
+			<select id="houseSelect">
+				<option value="">-- Select State House District (1–65) --</option>
+			</select>
+		</div>
+	</div>
 
-function getBodyText(sender, recipient) {
-  const name = sender.trim() || "[YOUR NAME]";
-  return `Dear ${recipient},
+	<!-- ===== Editable message (shared by every card below) ===== -->
+	<div class="preview-container">
+		<div class="preview-header">
+			<label for="msg">
+				<strong>Your Message</strong> – edit freely. [RECIPIENT] and [YOUR NAME] fill in automatically.
+			</label>
+			<div>
+				<button type="button" class="btn btn-outline" id="resetMsg">Reset</button>
+				<button type="button" class="btn btn-secondary" id="copyBtn">Copy Text to Clipboard</button>
+				<span class="toast" id="copyToast" role="status">Copied!</span>
+			</div>
+		</div>
+		<textarea id="msg" rows="16"></textarea>
+		<p class="sub">Tip: adding a sentence about why this matters to you makes your message stand out.</p>
+	</div>
 
-My name is ${name} and I am writing to you as your constituent to urge you to take immediate legislative action to oppose and repeal Propositions 134 and 135 following their passage.
+	<!-- ===== Step 2: Send emails ===== -->
+	<div class="form-section">
+		<h2>2. Send Emails</h2>
+
+		<div class="links-container">
+
+			<!-- Governor (current and Governor-elect) -->
+			<div class="card">
+				<h3 id="govTitle">Contact the Governor</h3>
+				<p class="chamber-tag">State of Colorado · Executive Branch</p>
+				<div class="email-display" id="govInfo"></div>
+				<div class="btn-action-group">
+					<a class="btn" id="govForm" target="_blank" rel="noopener">Webform: Gov. Polis</a>
+					<a class="btn btn-secondary" id="govPhone">📞 Call</a>
+
+					<!-- Governor-elect buttons: shown only when GOV.elect has contact details -->
+					<a class="btn btn-outline" id="govElectBtn" hidden>Email Governor-elect</a>
+					<a class="btn btn-outline" id="govElectGmail" target="_blank" rel="noopener" hidden>Gmail</a>
+					<a class="btn btn-outline" id="govElectOutlook" target="_blank" rel="noopener" hidden>Outlook</a>
+					<a class="btn btn-secondary" id="govElectPhone" hidden>📞 Call</a>
+
+					<button type="button" class="btn btn-secondary" id="govCopyBody">Copy Email Body</button>
+					<span class="toast" id="govToast" role="status">Copied!</span>
+				</div>
+			</div>
+
+			<!-- State Senator -->
+			<div class="card">
+				<h3 id="senateTitle">Email Your Colorado State Senator</h3>
+				<p class="chamber-tag">Colorado State Senate (General Assembly)</p>
+				<div class="email-display" id="senateInfo"></div>
+				<div class="btn-action-group">
+					<a class="btn" id="senateBtn" aria-disabled="true">Open in Mail App</a>
+					<a class="btn btn-outline" id="senateGmail" target="_blank" rel="noopener" aria-disabled="true">Gmail</a>
+					<a class="btn btn-outline" id="senateOutlook" target="_blank" rel="noopener" aria-disabled="true">Outlook</a>
+					<a class="btn btn-secondary" id="senatePhone" aria-disabled="true">📞 Call</a>
+					<button type="button" class="btn btn-secondary" id="senateCopyEmail">Copy Email Address</button>
+					<button type="button" class="btn btn-secondary" id="senateCopyBody">Copy Email Body</button>
+					<span class="toast" id="senateToast" role="status">Copied!</span>
+				</div>
+			</div>
+
+			<!-- State House Representative -->
+			<div class="card">
+				<h3 id="houseTitle">Email Your Colorado State Representative</h3>
+				<p class="chamber-tag">Colorado House of Representatives (General Assembly)</p>
+				<div class="email-display" id="houseInfo"></div>
+				<div class="btn-action-group">
+					<a class="btn" id="houseBtn" aria-disabled="true">Open in Mail App</a>
+					<a class="btn btn-outline" id="houseGmail" target="_blank" rel="noopener" aria-disabled="true">Gmail</a>
+					<a class="btn btn-outline" id="houseOutlook" target="_blank" rel="noopener" aria-disabled="true">Outlook</a>
+					<a class="btn btn-secondary" id="housePhone" aria-disabled="true">📞 Call</a>
+					<button type="button" class="btn btn-secondary" id="houseCopyEmail">Copy Email Address</button>
+					<button type="button" class="btn btn-secondary" id="houseCopyBody">Copy Email Body</button>
+					<span class="toast" id="houseToast" role="status">Copied!</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- ===== Step 3: Phone script ===== -->
+	<div class="form-section">
+		<h2>3. Prefer to Call Your Representative?</h2>
+		<p>Calling legislative offices directly takes less than 2 minutes and is one of the most effective ways to make your voice heard on constituent record logs. Each card above has a 📞 button that dials directly.</p>
+
+		<div class="call-script-box">
+			<strong>📞 Quick Call Script:</strong>
+			<p style="margin: 6px 0 0;">
+				"Hello, my name is <span id="scriptName">[YOUR NAME]</span> and I am a constituent. I am calling to ask <span id="scriptRep">my representative</span> to take immediate action to oppose Propositions 134 and 135 and introduce statutory repeals for these dangerous measures. Transgender youth deserve equal protections, healthcare access, and safety in Colorado. Please log my strong constituent request for repeal. Thank you."
+			</p>
+		</div>
+
+		<div class="phone-list">
+			<strong>Official Capitol Phone Directories:</strong>
+			<ul>
+				<li><strong>Colorado General Assembly Capitol Switchboard:</strong> <a href="tel:3038662901">(303) 866-2901</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+		/* =====================================================================
+         * 1. DATA: edit these when the roster changes
+         * ===================================================================== */
+
+		// Subject line used for every email
+		const SUBJECT = "Legislative Action Required: Oppose and Repeal Propositions 134 and 135";
+
+		/*
+         * State legislators, keyed by district number.
+         * Format: district: [sitting member, representative-elect name?, representative-elect email?]
+         * A sitting member's email is generated as first.last.<chamber>@coleg.gov
+         * unless the address is listed in EMAIL_OVERRIDES below.
+         */
+		const SENATE = {
+			1: ["Byron Pelton"],
+			2: ["Lisa Frizell"],
+			3: ["Nick Hinrichsen", "Aaron Gutierrez", "info@aaronforpueblo.com"],
+			4: ["Mark Baisley", "Teddy Collins", "teddy@collinsforcolorado.com"],
+			5: ["Marc Catlin"],
+			6: ["Cleave Simpson"],
+			7: ["Janice Rich"],
+			8: ["Dylan Roberts"],
+			9: ["Lynda Zamora Wilson", "Terri Carver", "terri@terricarver.org"],
+			10: ["Larry Liston"],
+			11: ["Tony Exum"],
+			12: ["Marc Snyder"],
+			13: ["Scott Bright"],
+			14: ["Cathy Kipp"],
+			15: ["Janice Marchman"],
+			16: ["Chris Kolker"],
+			17: ["Katie Wallace"],
+			18: ["Judy Amabile"],
+			19: ["Lindsey Daugherty"],
+			20: ["Lisa Cutter", "Sheila Lieder", "sheilaforcolorado@gmail.com"],
+			21: ["Adrienne Benavidez"],
+			22: ["Jessie Danielson", "Monica Duran", "monica.duran.house@coleg.gov"],
+			23: ["Barbara Kirkmeyer"],
+			24: ["Kyle Mullica"],
+			25: ["William Lindstedt"],
+			26: ["Jeff Bridges"],
+			27: ["Tom Sullivan"],
+			28: ["Mike Weissman"],
+			29: ["Iman Jodeh"],
+			30: ["John Carson"],
+			31: ["Matt Ball"],
+			32: ["Robert Rodriguez", "Emily Sirota", "emily.sirota.house@coleg.gov"],
+			33: ["James Coleman"],
+			34: ["Julie Gonzales", "Chela Garcia Irlando", "chela@chelaforcolorado.com"],
+			35: ["Rod Pelton"]
+		};
+
+		const HOUSE = {
+			1: ["Javier Mabrey"],
+			2: ["Steven Woodrow"],
+			3: ["Meg Froelich", "Gena Ozols", "OzolsForHd3@gmail.com"],
+			4: ["Cecelia Espenoza"],
+			5: ["Alex Valdez"],
+			6: ["Sean Camacho", "Iris Halpern", "Iris.halpern@iris4colorado.com"],
+			7: ["Jennifer Bacon"],
+			8: ["Lindsay Gilchrist"],
+			9: ["Emily Sirota"],
+			10: ["Junie Joseph"],
+			11: ["Karen McCormick"],
+			12: ["Kyle Brown"],
+			13: ["Julie McCluskie", "Consuelo Redhorse", "voteredhorse@gmail.com"],
+			14: ["Ava Flanell"],
+			15: ["Scott Bottoms"],
+			16: ["Rebecca Keltie", "Stephanie Vigil", "info@stephanievigil.com"],
+			17: ["Regina English"],
+			18: ["Amy Paschal"],
+			19: ["Dan Woog"],
+			20: ["Jarvis Caldwell"],
+			21: ["Mary Bradfield"],
+			22: ["Ken DeGraaf"],
+			23: ["Monica Duran"],
+			24: ["Lisa Feret"],
+			25: ["Tammy Story"],
+			26: ["Meghan Lukens"],
+			27: ["Brianna Titone", "Danielle Varda", "danielle@vardaforcolorado.com"],
+			28: ["Sheila Lieder"],
+			29: ["Lori Goldstein"],
+			30: ["Rebekah Stewart"],
+			31: ["Jacque Phillips"],
+			32: ["María González", "Chris VanDijk", "chris@chris4colorado.com"],
+			33: ["Kenny Nguyen"],
+			34: ["Jenny Willford"],
+			35: ["Lorena Garcia"],
+			36: ["Michael Carter"],
+			37: ["Chad Clifford"],
+			38: ["Gretchen Rydin"],
+			39: ["Brandi Bradley"],
+			40: ["Naquetta Ricks"],
+			41: ["Jamie Jackson"],
+			42: ["Mandy Lindsay"],
+			43: ["Bob Marshall"],
+			44: ["Anthony Hartsook"],
+			45: ["Max Brooks"],
+			46: ["Tisha Mauro"],
+			47: ["Ty Winter"],
+			48: ["Carlos Barron"],
+			49: ["Lesley Smith"],
+			50: ["Ryan Gonzalez", "Tommy Butler", "butlerforhd50@gmail.com"],
+			51: ["Ron Weinberg"],
+			52: ["Yara Zokaie"],
+			53: ["Andrew Boesenecker"],
+			54: ["Matt Soper"],
+			55: ["Rick Taggart"],
+			56: ["Chris Richardson"],
+			57: ["Elizabeth Velasco"],
+			58: ["Larry Don Suckla"],
+			59: ["Katie Stewart"],
+			60: ["Stephanie Luck"],
+			61: ["Eliza Hamrick"],
+			62: ["Matthew Martinez"],
+			63: ["Dusty Johnson"],
+			64: ["Scott Slaugh"],
+			65: ["Lori Garcia Sander"]
+		};
+
+		// Addresses that don't follow the first.last.<chamber>@coleg.gov pattern.
+		// Key format: "<chamber>:<district>"
+		const EMAIL_OVERRIDES = {
+			"senate:4": "mark.baisley@senate.co.com",       // as listed in the official directory
+			"house:54": "matthew.soper.house@coleg.gov",
+			"house:58": "larry.suckla.house@coleg.gov",
+			"house:63": "dustyforcolorado@gmail.com"
+		};
+
+		/*
+         * Capitol office phone numbers for sitting members (all are 303-866-XXXX).
+         * Only the last four digits are stored. The array position is district - 1,
+         * so the first entry is District 1.
+         */
+		const SENATE_PHONES = [
+			6360, 4869, 4878, 4877, 5292, 4875, 3077, 4871, 4835, 2737,   // Districts 1-10
+			6364, 4880, 4855, 4841, 4853, 4883, 5291, 4872, 4840, 4859,   // Districts 11-20
+			4857, 4856, 4876, 4451, 4863, 4846, 4873, 4879, 3432, 4881,   // Districts 21-30
+			4861, 4852, 4864, 4862, 4884                                  // Districts 31-35
+		];
+
+		const HOUSE_PHONES = [
+			2966, 2967, 2921, 2954, 2925, 2911, 2909, 2959, 2910, 2915,   // Districts 1-10
+			2780, 2920, 2952, 2965, 5525, 2937, 3069, 2932, 2924, 2191,   // Districts 11-20
+			2946, 2927, 5522, 2950, 2582, 2923, 2962, 2939, 2843, 2951,   // Districts 21-30
+			2918, 2945, 4667, 2931, 2964, 2942, 5510, 2953, 2935, 2944,   // Districts 31-40
+			2919, 3911, 2936, 2933, 2948, 2968, 2747, 2943, 2578, 2929,   // Districts 41-50
+			2947, 4569, 2917, 2583, 3068, 2912, 2949, 2955, 2914, 2905,   // Districts 51-60
+			3706, 2916, 2398, 2906, 2907                                  // Districts 61-65
+		];
+
+		// Governor: the sitting governor and the governor-elect.
+		// Phone numbers are digits only, with the area code.
+		const GOVERNOR = {
+			current: {
+				name: "Jared Polis",
+				form: "https://www.colorado.gov/governor/contact-us",
+				phone: "3038662471"
+			},
+			elect: {
+				name: "Phil Weiser",
+				email: "info@philforcolorado.com",   // campaign email
+				phone: "7209489171"                  // campaign phone
+			}
+		};
+
+		/* =====================================================================
+         * 2. DEFAULT MESSAGE
+         * [RECIPIENT] and [YOUR NAME] are swapped in when an email is built.
+         * ===================================================================== */
+
+		const DEFAULT_MESSAGE = `Dear [RECIPIENT],
+
+My name is [YOUR NAME] and I am writing to you as your constituent to urge you to take immediate legislative action to oppose and repeal Propositions 134 and 135 following their passage.
 
 Propositions 134 and 135 restrict the rights of transgender youth to participate in school sports and limit their access to essential, medically necessary gender-affirming healthcare. Health, safety, bodily autonomy, and equal opportunity must remain priority protections in Colorado, all of which are proven to be better served through inclusive state and federal policies rather than restrictive mandates.
 
@@ -207,157 +649,282 @@ Thank you for your time and representation.
 
 Sincerely,
 
-${name}`;
-}
+[YOUR NAME]`;
 
-function stateContact(chamber, dist, roster) {
-  const d = roster[dist];
-  if (!d) return null;
-  const [inc, elect, electEmail] = d;
-  const [first, ...rest] = inc.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z ]/g, "").split(" ");
-  const email = OVERRIDE[`${chamber}:${dist}`] || `${first}.${rest.join("")}.${chamber}@coleg.gov`;
-  const title = chamber === "senate" ? "Senator" : "Representative";
-  const names = elect ? `${inc} & ${title}-elect ${elect}` : inc;
-  return {
-    title, names, elect, electEmail,
-    emails: [email, electEmail].filter(Boolean),
-    greeting: `${title} ${inc}` + (elect ? ` & ${title}-elect ${elect}` : "")
-  };
-}
+		/* =====================================================================
+         * 3. HELPERS
+         * ===================================================================== */
 
-function toast(el) {
-  el.classList.add("show");
-  setTimeout(() => el.classList.remove("show"), 2000);
-}
+		// Shorthand for document.getElementById
+		const $ = id => document.getElementById(id);
 
-async function copyText(text, toastEl) {
-  try {
-    await navigator.clipboard.writeText(text);
-  } catch {
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand("copy"); } catch {}
-    ta.remove();
-  }
-  toast(toastEl);
-}
+		// Latest email bodies and recipients, kept so the "Copy" buttons can use them
+		const state = {
+			govBody: "",
+			senateBody: "",
+			houseBody: "",
+			senateEmails: [],
+			houseEmails: []
+		};
 
-function mailto(emails, body) {
-  return `mailto:${emails.join(",")}?subject=${encodeURIComponent(SUBJECT)}&body=${encodeURIComponent(body)}`;
-}
+		// Builds the final email text from the message box, filling in the placeholders
+		function getBodyText(senderName, recipient) {
+			const name = senderName.trim() || "[YOUR NAME]";
+			return $("msg").value
+				.split("[YOUR NAME]").join(name)
+				.split("[RECIPIENT]").join(recipient);
+		}
 
-function fillSelect(select, roster, count, label) {
-  for (let i = 1; i <= count; i++) {
-    const d = roster[i];
-    const opt = document.createElement("option");
-    opt.value = i;
-    opt.textContent = d
-      ? `${label} District ${i} – ${d[0]}${d[1] ? " & Elect " + d[1] : ""}`
-      : `${label} District ${i} – (roster entry needed)`;
-    select.appendChild(opt);
-  }
-}
+		// Looks up one state legislator and works out who to email.
+		// Returns null if the district has no roster entry.
+		function stateContact(chamber, district, roster) {
+			const entry = roster[district];
+			if (!entry) return null;
 
-// ---------- SETUP ----------
-Object.entries(CD).forEach(([k, d]) => {
-  const opt = document.createElement("option");
-  opt.value = k;
-  opt.textContent = `Congressional District ${k} (${d[0]}) – Rep. ${d[1]}${d[3] ? " & Rep.-elect " + d[3] : ""}`;
-  $("cdSelect").appendChild(opt);
-});
-fillSelect($("senateSelect"), SENATE, 35, "Senate");
-fillSelect($("houseSelect"), HOUSE, 65, "House");
+			const [sitting, elect, electEmail] = entry;
 
-const state = { senateEmails: [], houseEmails: [], cdBody: "", senateBody: "", houseBody: "" };
+			// Turn "María González" into "maria" + "gonzalez" for the email pattern
+			const [first, ...rest] = sitting
+				.normalize("NFD")
+				.replace(/[\u0300-\u036f]/g, "")   // strip accents
+				.toLowerCase()
+				.replace(/[^a-z ]/g, "")
+				.split(" ");
 
-function renderState(kind, dist, roster, name) {
-  const info = $(kind + "Info"), btn = $(kind + "Btn"), title = $(kind + "Title");
-  const generic = kind === "senate" ? "State Senator" : "State Representative";
-  const c = dist ? stateContact(kind, dist, roster) : null;
-  const key = kind === "senate" ? "senate" : "house";
+			const email = EMAIL_OVERRIDES[`${chamber}:${district}`]
+				|| `${first}.${rest.join("")}.${chamber}@coleg.gov`;
 
-  if (!c) {
-    title.textContent = `Email Your Colorado ${kind === "senate" ? "State Senator" : "State Representative"}`;
-    info.textContent = dist
-      ? "No roster entry for this district yet. Use the Find State Districts link above."
-      : `Recipients: Select a ${kind === "senate" ? "Senate" : "House"} district above`;
-    state[key + "Emails"] = [];
-    state[key + "Body"] = getBodyText(name, generic);
-    btn.removeAttribute("href");
-    btn.setAttribute("aria-disabled", "true");
-    return;
-  }
-  const prefix = kind === "senate" ? "Sen." : "Rep.";
-  title.textContent = `Email ${prefix} ${c.names} (${kind === "senate" ? "Senate" : "House"} District ${dist})`;
-  let text = `Recipients: ${c.emails.join(", ")}`;
-  if (c.elect && !c.electEmail) text += ` (no email on file for ${c.elect} yet)`;
-  info.textContent = text;
-  state[key + "Emails"] = c.emails;
-  state[key + "Body"] = getBodyText(name, c.greeting);
-  btn.href = mailto(c.emails, state[key + "Body"]);
-  btn.removeAttribute("aria-disabled");
-}
+			const title = chamber === "senate" ? "Senator" : "Representative";
 
-function update() {
-  const name = $("userName").value;
-  const cd = CD[$("cdSelect").value];
-  const sDist = $("senateSelect").value, hDist = $("houseSelect").value;
+			return {
+				names: elect ? `${sitting} & ${title}-elect ${elect}` : sitting,
+				greeting: `${title} ${sitting}` + (elect ? ` & ${title}-elect ${elect}` : ""),
+				elect,
+				electEmail,
+				emails: [email, electEmail].filter(Boolean)   // drop a missing elect email
+			};
+		}
 
-  // Call script
-  $("scriptName").textContent = name.trim() || "[YOUR NAME]";
-  let repLabel = "my representative";
-  if (cd) repLabel = `Representative ${cd[1]}` + (cd[3] ? ` and Representative-elect ${cd[3]}` : "");
-  else if (SENATE[sDist]) repLabel = `Senator ${SENATE[sDist][0]}`;
-  else if (HOUSE[hDist]) repLabel = `Representative ${HOUSE[hDist][0]}`;
-  $("scriptRep").textContent = repLabel;
+		// Formats "3038662471" as "(303) 866-2471"
+		const formatPhone = digits => `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
 
-  $("previewText").textContent = getBodyText(name, "Representative / Senator");
+		// Builds the three ways to open an email: default mail app, Gmail, Outlook
+		function mailLinks(emails, body) {
+			const to = emails.join(",");
+			const subject = encodeURIComponent(SUBJECT);
+			const text = encodeURIComponent(body);
+			const toEncoded = encodeURIComponent(to);
 
-  // Federal
-  const cdBtn = $("cdBtn"), elBtn = $("cdElectBtn");
-  if (cd) {
-    const [, inc, url, elect, electEmail] = cd;
-    $("cdTitle").textContent = `Email ${inc}${elect ? " & " + elect : ""} (CD ${$("cdSelect").value})`;
-    cdBtn.href = url;
-    cdBtn.textContent = `Open Webform for Rep. ${inc}`;
-    if (elect) {
-      $("cdInfo").textContent = `Sitting Representative: Rep. ${inc} (official webform) · Representative-elect: ${elect} (${electEmail})`;
-      elBtn.href = mailto([electEmail], getBodyText(name, `Representative-elect ${elect}`));
-      elBtn.textContent = `Email ${elect} (${electEmail})`;
-      elBtn.hidden = false;
-    } else {
-      $("cdInfo").textContent = `Recipient: Rep. ${inc} (official webform)`;
-      elBtn.hidden = true;
-    }
-    state.cdBody = getBodyText(name, `Representative ${inc}` + (elect ? ` & Representative-elect ${elect}` : ""));
-  } else {
-    $("cdTitle").textContent = "Email Your U.S. Congressional Representative";
-    $("cdInfo").textContent = "Recipients: Select a Congressional District above";
-    cdBtn.href = "https://www.house.gov/representatives/find-your-representative";
-    cdBtn.textContent = "Find Congressional Form";
-    elBtn.hidden = true;
-    state.cdBody = getBodyText(name, "Congressional Representative");
-  }
+			return {
+				mail: `mailto:${to}?subject=${subject}&body=${text}`,
+				gmail: `https://mail.google.com/mail/?view=cm&fs=1&to=${toEncoded}&su=${subject}&body=${text}`,
+				outlook: `https://outlook.live.com/mail/0/deeplink/compose?to=${toEncoded}&subject=${subject}&body=${text}`
+			};
+		}
 
-  renderState("senate", sDist, SENATE, name);
-  renderState("house", hDist, HOUSE, name);
-}
+		// Points a link at a URL, or dims it and removes the URL when there isn't one
+		function setLink(element, href) {
+			if (href) {
+				element.href = href;
+				element.removeAttribute("aria-disabled");
+			} else {
+				element.removeAttribute("href");
+				element.setAttribute("aria-disabled", "true");
+			}
+		}
 
-// ---------- EVENTS ----------
-$("userName").addEventListener("input", update);
-["cdSelect", "senateSelect", "houseSelect"].forEach(id => $(id).addEventListener("change", update));
-$("copyBtn").addEventListener("click", () => copyText($("previewText").textContent, $("copyToast")));
-$("cdCopyBody").addEventListener("click", () => copyText(state.cdBody, $("cdToast")));
-$("senateCopyBody").addEventListener("click", () => copyText(state.senateBody, $("senateToast")));
-$("houseCopyBody").addEventListener("click", () => copyText(state.houseBody, $("houseToast")));
-$("senateCopyEmail").addEventListener("click", () => copyText(state.senateEmails.join(", "), $("senateToast")));
-$("houseCopyEmail").addEventListener("click", () => copyText(state.houseEmails.join(", "), $("houseToast")));
+		// Sets the mail app, Gmail and Outlook buttons together.
+		// ids = [mailButtonId, gmailButtonId, outlookButtonId]
+		function setMailButtons(ids, emails, body) {
+			const links = emails.length ? mailLinks(emails, body) : {};
+			setLink($(ids[0]), links.mail);
+			setLink($(ids[1]), links.gmail);
+			setLink($(ids[2]), links.outlook);
+		}
 
-update();
-</script>
+		// Turns a link into a tap-to-call button (or dims it when there's no number)
+		function setPhone(element, digits, label = "Call") {
+			element.textContent = digits ? `📞 ${label} ${formatPhone(digits)}` : "📞 Call";
+			setLink(element, digits ? `tel:+1${digits}` : null);
+		}
+
+		// Shows the "Copied!" message for two seconds
+		function showToast(element) {
+			element.classList.add("show");
+			setTimeout(() => element.classList.remove("show"), 2000);
+		}
+
+		// Copies text to the clipboard, with a fallback for browsers that block the modern API
+		async function copyText(text, toastElement) {
+			try {
+				await navigator.clipboard.writeText(text);
+			} catch {
+				const temp = document.createElement("textarea");
+				temp.value = text;
+				temp.style.position = "fixed";
+				temp.style.opacity = "0";
+				document.body.appendChild(temp);
+				temp.select();
+				try { document.execCommand("copy"); } catch { /* nothing more we can do */ }
+				temp.remove();
+			}
+			showToast(toastElement);
+		}
+
+		// Fills a district dropdown with one option per district
+		function fillSelect(select, roster, count, label) {
+			for (let i = 1; i <= count; i++) {
+				const entry = roster[i];
+				const option = document.createElement("option");
+				option.value = i;
+				option.textContent = entry
+					? `${label} District ${i} – ${entry[0]}${entry[1] ? " & Elect " + entry[1] : ""}`
+					: `${label} District ${i} – (roster entry needed)`;
+				select.appendChild(option);
+			}
+		}
+
+		/* =====================================================================
+         * 4. RENDERING: refresh every card from the current form values
+         * ===================================================================== */
+
+		// Updates the State Senate or State House card
+		// kind is "senate" or "house" (it also prefixes the element ids)
+		function renderState(kind, district, roster, name, phones) {
+			const info = $(kind + "Info");
+			const title = $(kind + "Title");
+			const buttonIds = [kind + "Btn", kind + "Gmail", kind + "Outlook"];
+			const generic = kind === "senate" ? "State Senator" : "State Representative";
+			const contact = district ? stateContact(kind, district, roster) : null;
+
+			// No district chosen, or the district isn't in the roster yet
+			if (!contact) {
+				title.textContent = `Email Your Colorado ${generic}`;
+				info.textContent = district
+					? "No roster entry for this district yet. Use the Find State Districts link above."
+					: `Recipients: Select a ${kind === "senate" ? "Senate" : "House"} district above`;
+				state[kind + "Emails"] = [];
+				state[kind + "Body"] = getBodyText(name, generic);
+				setMailButtons(buttonIds, [], "");
+				setPhone($(kind + "Phone"), null);
+				return;
+			}
+
+			// Card heading and recipient list
+			const prefix = kind === "senate" ? "Sen." : "Rep.";
+			const chamberName = kind === "senate" ? "Senate" : "House";
+			title.textContent = `Email ${prefix} ${contact.names} (${chamberName} District ${district})`;
+
+			let recipients = `Recipients: ${contact.emails.join(", ")}`;
+			if (contact.elect && !contact.electEmail) {
+				recipients += ` (no email on file for ${contact.elect} yet)`;
+			}
+			info.textContent = recipients;
+
+			// Email body, buttons and phone number
+			state[kind + "Emails"] = contact.emails;
+			state[kind + "Body"] = getBodyText(name, contact.greeting);
+			setMailButtons(buttonIds, contact.emails, state[kind + "Body"]);
+
+			const extension = phones[district - 1];
+			setPhone($(kind + "Phone"), extension ? "303866" + extension : null);
+		}
+
+		// Updates the Governor card (current governor plus governor-elect)
+		function renderGovernor(name) {
+			const current = GOVERNOR.current;
+			const elect = GOVERNOR.elect;
+			const electButtonIds = ["govElectBtn", "govElectGmail", "govElectOutlook"];
+
+			// Summary line
+			let info = `Gov. ${current.name} (current)`;
+			if (elect.name) {
+				info += ` · Governor-elect ${elect.name} takes office next January`;
+				info += elect.email ? ` (${elect.email})` : " (no public contact on file yet)";
+			}
+			$("govInfo").textContent = info;
+
+			// Current governor: webform and phone
+			$("govForm").href = current.form;
+			$("govForm").textContent = `Webform: Gov. ${current.name}`;
+			setPhone($("govPhone"), current.phone, `Gov. ${current.name.split(" ").pop()}`);
+
+			// Text used by the "Copy Email Body" button
+			state.govBody = getBodyText(
+				name,
+				`Governor ${current.name}` + (elect.name ? ` & Governor-elect ${elect.name}` : "")
+			);
+
+			// Governor-elect: show buttons only for the details we actually have
+			const hasEmail = Boolean(elect.name && elect.email);
+			const hasPhone = Boolean(elect.name && elect.phone);
+
+			electButtonIds.forEach(id => { $(id).hidden = !hasEmail; });
+			$("govElectPhone").hidden = !hasPhone;
+
+			if (hasEmail) {
+				setMailButtons(electButtonIds, [elect.email], getBodyText(name, `Governor-elect ${elect.name}`));
+				$("govElectBtn").textContent = `Email Gov.-elect ${elect.name}`;
+			}
+			if (hasPhone) {
+				setPhone($("govElectPhone"), elect.phone, `${elect.name.split(" ").pop()} campaign`);
+			}
+		}
+
+		// Updates the call script with the name and the selected legislator
+		function renderCallScript(name, senateDistrict, houseDistrict) {
+			let who = "my representative";
+			if (SENATE[senateDistrict]) who = `Senator ${SENATE[senateDistrict][0]}`;
+			else if (HOUSE[houseDistrict]) who = `Representative ${HOUSE[houseDistrict][0]}`;
+
+			$("scriptName").textContent = name.trim() || "[YOUR NAME]";
+			$("scriptRep").textContent = who;
+		}
+
+		// Re-renders everything. Runs on load and whenever an input changes.
+		function update() {
+			const name = $("userName").value;
+			const senateDistrict = $("senateSelect").value;
+			const houseDistrict = $("houseSelect").value;
+
+			renderCallScript(name, senateDistrict, houseDistrict);
+			renderGovernor(name);
+			renderState("senate", senateDistrict, SENATE, name, SENATE_PHONES);
+			renderState("house", houseDistrict, HOUSE, name, HOUSE_PHONES);
+		}
+
+		/* =====================================================================
+         * 5. STARTUP AND EVENTS
+         * ===================================================================== */
+
+		// Fill the dropdowns and the message box
+		fillSelect($("senateSelect"), SENATE, 35, "Senate");
+		fillSelect($("houseSelect"), HOUSE, 65, "House");
+		$("msg").value = DEFAULT_MESSAGE;
+
+		// Refresh the cards whenever the person changes something
+		$("userName").addEventListener("input", update);
+		$("msg").addEventListener("input", update);
+		$("senateSelect").addEventListener("change", update);
+		$("houseSelect").addEventListener("change", update);
+
+		// Restore the original message
+		$("resetMsg").addEventListener("click", () => {
+			$("msg").value = DEFAULT_MESSAGE;
+			update();
+		});
+
+		// Copy buttons
+		$("copyBtn").addEventListener("click", () =>
+			copyText(getBodyText($("userName").value, "Representative / Senator"), $("copyToast")));
+		$("govCopyBody").addEventListener("click", () => copyText(state.govBody, $("govToast")));
+		$("senateCopyBody").addEventListener("click", () => copyText(state.senateBody, $("senateToast")));
+		$("houseCopyBody").addEventListener("click", () => copyText(state.houseBody, $("houseToast")));
+		$("senateCopyEmail").addEventListener("click", () => copyText(state.senateEmails.join(", "), $("senateToast")));
+		$("houseCopyEmail").addEventListener("click", () => copyText(state.houseEmails.join(", "), $("houseToast")));
+
+		// First render
+		update();
+	</script>
 </body>
 </html>
