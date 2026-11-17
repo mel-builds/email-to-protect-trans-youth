@@ -396,7 +396,7 @@
 					<a class="btn" id="govForm" target="_blank" rel="noopener">Webform: Gov. Polis</a>
 					<a class="btn btn-secondary" id="govPhone">📞 Call</a>
 
-					<!-- Governor-elect buttons: shown only when GOV.elect has contact details -->
+					<!-- Governor-elect buttons: shown only when GOVERNOR.elect has contact details -->
 					<a class="btn btn-outline" id="govElectBtn" hidden>Email Governor-elect</a>
 					<a class="btn btn-outline" id="govElectGmail" target="_blank" rel="noopener" hidden>Gmail</a>
 					<a class="btn btn-outline" id="govElectOutlook" target="_blank" rel="noopener" hidden>Outlook</a>
@@ -472,123 +472,121 @@
 
 		/*
          * State legislators, keyed by district number.
-         * Format: district: [sitting member, representative-elect name?, representative-elect email?]
-         * A sitting member's email is generated as first.last.<chamber>@coleg.gov
+         * Format: district: [sitting member, sitting email, elect name?, elect email?]
+         * If the sitting email is left blank (""), it is generated as first.last.<chamber>@coleg.gov
          * unless the address is listed in EMAIL_OVERRIDES below.
          */
 		const SENATE = {
-			1: ["Byron Pelton"],
-			2: ["Lisa Frizell"],
-			3: ["Nick Hinrichsen", "Aaron Gutierrez", "info@aaronforpueblo.com"],
-			4: ["Mark Baisley", "Teddy Collins", "teddy@collinsforcolorado.com"],
-			5: ["Marc Catlin"],
-			6: ["Cleave Simpson"],
-			7: ["Janice Rich"],
-			8: ["Dylan Roberts"],
-			9: ["Lynda Zamora Wilson", "Terri Carver", "terri@terricarver.org"],
-			10: ["Larry Liston"],
-			11: ["Tony Exum"],
-			12: ["Marc Snyder"],
-			13: ["Scott Bright"],
-			14: ["Cathy Kipp"],
-			15: ["Janice Marchman"],
-			16: ["Chris Kolker"],
-			17: ["Katie Wallace"],
-			18: ["Judy Amabile"],
-			19: ["Lindsey Daugherty"],
-			20: ["Lisa Cutter", "Sheila Lieder", "sheilaforcolorado@gmail.com"],
-			21: ["Adrienne Benavidez"],
-			22: ["Jessie Danielson", "Monica Duran", "monica.duran.house@coleg.gov"],
-			23: ["Barbara Kirkmeyer"],
-			24: ["Kyle Mullica"],
-			25: ["William Lindstedt"],
-			26: ["Jeff Bridges"],
-			27: ["Tom Sullivan"],
-			28: ["Mike Weissman"],
-			29: ["Iman Jodeh"],
-			30: ["John Carson"],
-			31: ["Matt Ball"],
-			32: ["Robert Rodriguez", "Emily Sirota", "emily.sirota.house@coleg.gov"],
-			33: ["James Coleman"],
-			34: ["Julie Gonzales", "Chela Garcia Irlando", "chela@chelaforcolorado.com"],
-			35: ["Rod Pelton"]
+			1: ["Byron Pelton", ""],
+			2: ["Lisa Frizell", ""],
+			3: ["Nick Hinrichsen", "", "Aaron Gutierrez", "info@aaronforpueblo.com"],
+			4: ["Mark Baisley", "", "Teddy Collins", "teddy@collinsforcolorado.com"],
+			5: ["Marc Catlin", ""],
+			6: ["Cleave Simpson", ""],
+			7: ["Janice Rich", ""],
+			8: ["Dylan Roberts", ""],
+			9: ["Lynda Zamora Wilson", "", "Terri Carver", "terri@terricarver.org"],
+			10: ["Larry Liston", ""],
+			11: ["Tony Exum", ""],
+			12: ["Marc Snyder", ""],
+			13: ["Scott Bright", ""],
+			14: ["Cathy Kipp", ""],
+			15: ["Janice Marchman", ""],
+			16: ["Chris Kolker", ""],
+			17: ["Katie Wallace", ""],
+			18: ["Judy Amabile", ""],
+			19: ["Lindsey Daugherty", ""],
+			20: ["Lisa Cutter", "", "Sheila Lieder", "sheilaforcolorado@gmail.com"],
+			21: ["Adrienne Benavidez", ""],
+			22: ["Jessie Danielson", "", "Monica Duran", "monica.duran.house@coleg.gov"],
+			23: ["Barbara Kirkmeyer", ""],
+			24: ["Kyle Mullica", ""],
+			25: ["William Lindstedt", ""],
+			26: ["Jeff Bridges", ""],
+			27: ["Tom Sullivan", ""],
+			28: ["Mike Weissman", ""],
+			29: ["Iman Jodeh", ""],
+			30: ["John Carson", "" "Kevin Leung", "kevin@kevinfordougco.com"],
+			31: ["Matt Ball", ""],
+			32: ["Robert Rodriguez", "", "Emily Sirota", "emily.sirota.house@coleg.gov"],
+			33: ["James Coleman", ""],
+			34: ["Julie Gonzales", "", "Chela Garcia Irlando", "chela@chelaforcolorado.com"],
+			35: ["Rod Pelton", ""]
 		};
 
 		const HOUSE = {
-			1: ["Javier Mabrey"],
-			2: ["Steven Woodrow"],
-			3: ["Meg Froelich", "Gena Ozols", "OzolsForHd3@gmail.com"],
-			4: ["Cecelia Espenoza"],
-			5: ["Alex Valdez"],
-			6: ["Sean Camacho", "Iris Halpern", "Iris.halpern@iris4colorado.com"],
-			7: ["Jennifer Bacon"],
-			8: ["Lindsay Gilchrist"],
-			9: ["Emily Sirota"],
-			10: ["Junie Joseph"],
-			11: ["Karen McCormick"],
-			12: ["Kyle Brown"],
-			13: ["Julie McCluskie", "Consuelo Redhorse", "voteredhorse@gmail.com"],
-			14: ["Ava Flanell"],
-			15: ["Scott Bottoms"],
-			16: ["Rebecca Keltie", "Stephanie Vigil", "info@stephanievigil.com"],
-			17: ["Regina English"],
-			18: ["Amy Paschal"],
-			19: ["Dan Woog"],
-			20: ["Jarvis Caldwell"],
-			21: ["Mary Bradfield"],
-			22: ["Ken DeGraaf"],
-			23: ["Monica Duran"],
-			24: ["Lisa Feret"],
-			25: ["Tammy Story"],
-			26: ["Meghan Lukens"],
-			27: ["Brianna Titone", "Danielle Varda", "danielle@vardaforcolorado.com"],
-			28: ["Sheila Lieder"],
-			29: ["Lori Goldstein"],
-			30: ["Rebekah Stewart"],
-			31: ["Jacque Phillips"],
-			32: ["María González", "Chris VanDijk", "chris@chris4colorado.com"],
-			33: ["Kenny Nguyen"],
-			34: ["Jenny Willford"],
-			35: ["Lorena Garcia"],
-			36: ["Michael Carter"],
-			37: ["Chad Clifford"],
-			38: ["Gretchen Rydin"],
-			39: ["Brandi Bradley"],
-			40: ["Naquetta Ricks"],
-			41: ["Jamie Jackson"],
-			42: ["Mandy Lindsay"],
-			43: ["Bob Marshall"],
-			44: ["Anthony Hartsook"],
-			45: ["Max Brooks"],
-			46: ["Tisha Mauro"],
-			47: ["Ty Winter"],
-			48: ["Carlos Barron"],
-			49: ["Lesley Smith"],
-			50: ["Ryan Gonzalez", "Tommy Butler", "butlerforhd50@gmail.com"],
-			51: ["Ron Weinberg"],
-			52: ["Yara Zokaie"],
-			53: ["Andrew Boesenecker"],
-			54: ["Matt Soper"],
-			55: ["Rick Taggart"],
-			56: ["Chris Richardson"],
-			57: ["Elizabeth Velasco"],
-			58: ["Larry Don Suckla"],
-			59: ["Katie Stewart"],
-			60: ["Stephanie Luck"],
-			61: ["Eliza Hamrick"],
-			62: ["Matthew Martinez"],
-			63: ["Dusty Johnson"],
-			64: ["Scott Slaugh"],
-			65: ["Lori Garcia Sander"]
+			1: ["Javier Mabrey", "javier.mabrey.house@coleg.gov"],
+			2: ["Steven Woodrow", "", "Scott Baldermann", "scott.baldermann@gmail.com"],
+			3: ["Meg Froelich", "", "Gena Ozols", "ozolsforhd3@gmail.com"],
+			4: ["Cecelia Espenoza", "cecelia.espenoza.house@coleg.gov"],
+			5: ["Alex Valdez", "", "Justine Sandoval", "hd5justine@gmail.com"],
+			6: ["Sean Camacho", "", "Iris Halpern", "iris.halpern@iris4colorado.com"],
+			7: ["Jennifer Bacon", "jennifer.bacon.house@coleg.gov"],
+			8: ["Lindsay Gilchrist", "lindsay.gilchrist.house@coleg.gov"],
+			9: ["Emily Sirota", "", "Monica VanBuskirk", "info@monicaforcolorado.com"],
+			10: ["Junie Joseph", "junie.joseph.house@coleg.gov"],
+			11: ["Karen McCormick", "karen.mccormick.house@coleg.gov"],
+			12: ["Kyle Brown", "kyle.brown.house@coleg.gov"],
+			13: ["Julie McCluskie", "", "Consuelo Redhorse", "voteredhorse@gmail.com"],
+			14: ["Ava Flanell", "ava.flanell.house@coleg.gov"],
+			15: ["Scott Bottoms", "", "Jeff Livingston", "jefflivingforhd15@gmail.com"],
+			16: ["Rebecca Keltie", "", "Stephanie Vigil", "info@stephanievigil.com"],
+			17: ["Regina English", "regina.english.house@coleg.gov"],
+			18: ["Amy Paschal", "amy.paschal.house@coleg.gov"],
+			19: ["Dan Woog", "", "Jillaire McMillan", "jillairemcmillan@gmail.com"],
+			20: ["Jarvis Caldwell", ""],
+			21: ["Mary Bradfield", "", "Michelle Tweed", "michelletweedforcolorado@gmail.com"],
+			22: ["Ken DeGraaf", "ken.degraaf.house@coleg.gov"],
+			23: ["Monica Duran", "", "Alexis Hoffkling", "info@alexisforcolorado.com"],
+			24: ["Lisa Feret", "lisa.feret.house@coleg.gov"],
+			25: ["Tammy Story", "tammy.story.house@coleg.gov"],
+			26: ["Meghan Lukens", "meghan.lukens.house@coleg.gov"],
+			27: ["Brianna Titone", "", "Danielle Varda", "danielle@vardaforcolorado.com"],
+			28: ["Sheila Lieder", "", "David Rein", "reinforcolorado@gmail.com"],
+			29: ["Lori Goldstein", "lori.goldstein.house@coleg.gov"],
+			30: ["Rebekah Stewart", "rebekah.stewart.house@coleg.gov"],
+			31: ["Jacque Phillips", "", "Gabriel Cervantes", "home@gabrielforcolorado.com"],
+			32: ["María González", "", "Chris VanDijk", "chris@chris4colorado.com"],
+			33: ["Kenny Nguyen", "kenny.nguyen.house@coleg.gov"],
+			34: ["Jenny Willford", "jenny.willford.house@coleg.gov"],
+			35: ["Lorena Garcia", "lorena.garcia.house@coleg.gov"],
+			36: ["Michael Carter", "michael.carter.house@coleg.gov"],
+			37: ["Chad Clifford", "chad.clifford.house@coleg.gov"],
+			38: ["Gretchen Rydin", "gretchen.rydin.house@coleg.gov"],
+			39: ["Brandi Bradley", "brandi.bradley.house@coleg.gov"],
+			40: ["Naquetta Ricks", "naquetta.ricks.house@coleg.gov"],
+			41: ["Jamie Jackson", "jamie.jackson.house@coleg.gov"],
+			42: ["Mandy Lindsay", "", "Sarah Woodson", "woodsonforhd42@gmail.com"],
+			43: ["Bob Marshall", "bob.marshall.house@coleg.gov"],
+			44: ["Anthony Hartsook", "anthony.hartsook.house@coleg.gov"],
+			45: ["Max Brooks", "max.brooks.house@coleg.gov"],
+			46: ["Tisha Mauro", "tisha.mauro.house@coleg.gov"],
+			47: ["Ty Winter", "ty.winter.house@coleg.gov"],
+			48: ["Carlos Barron", "carlos.barron.house@coleg.gov"],
+			49: ["Lesley Smith", "lesley.smith.house@coleg.gov"],
+			50: ["Ryan Gonzalez", "", "Tommy Butler", "butlerforhd50@gmail.com"],
+			51: ["Ron Weinberg", "", "Jacki Marsh", "jackiforcolorado@gmail.com"],
+			52: ["Yara Zokaie", "yara.zokaie.house@coleg.gov"],
+			53: ["Andrew Boesenecker", "andrew.boesenecker.house@coleg.gov"],
+			54: ["Matt Soper", "", "Jason Bias", "jasonbias13@gmail.com"],
+			55: ["Rick Taggart", "rick.taggart.house@coleg.gov"],
+			56: ["Chris Richardson", "chris.richardson.house@coleg.gov"],
+			57: ["Elizabeth Velasco", "elizabeth.velasco.house@coleg.gov"],
+			58: ["Larry Don Suckla", "larry.suckla.house@coleg.gov"],
+			59: ["Katie Stewart", "katie.stewart.house@coleg.gov"],
+			60: ["Stephanie Luck", "", "Matthew Alexander", "matt@alexanderforco.com"],
+			61: ["Eliza Hamrick", "eliza.hamrick.house@coleg.gov"],
+			62: ["Matthew Martinez", "matthew.martinez.house@coleg.gov"],
+			63: ["Dusty Johnson", "dustyforcolorado@gmail.com"],
+			64: ["Scott Slaugh", "scott.slaugh.house@coleg.gov"],
+			65: ["Lori Garcia Sander", "lori.garciasander.house@coleg.gov"]
 		};
 
 		// Addresses that don't follow the first.last.<chamber>@coleg.gov pattern.
 		// Key format: "<chamber>:<district>"
 		const EMAIL_OVERRIDES = {
 			"senate:4": "mark.baisley@senate.co.com",       // as listed in the official directory
-			"house:54": "matthew.soper.house@coleg.gov",
-			"house:58": "larry.suckla.house@coleg.gov",
-			"house:63": "dustyforcolorado@gmail.com"
+			"house:54": "matthew.soper.house@coleg.gov"
 		};
 
 		/*
@@ -623,7 +621,7 @@
 			},
 			elect: {
 				name: "Phil Weiser",
-				email: "info@buildingcoloradosfuturetogether.org",   // campaign email
+				email: "teamphil@philforcolorado.com",   // from the contact-list CSV
 				phone: "7209489171"                  // campaign phone
 			}
 		};
@@ -681,7 +679,7 @@ Sincerely,
 			const entry = roster[district];
 			if (!entry) return null;
 
-			const [sitting, elect, electEmail] = entry;
+			const [sitting, sittingEmail, elect, electEmail] = entry;
 
 			// Turn "María González" into "maria" + "gonzalez" for the email pattern
 			const [first, ...rest] = sitting
@@ -691,7 +689,8 @@ Sincerely,
 				.replace(/[^a-z ]/g, "")
 				.split(" ");
 
-			const email = EMAIL_OVERRIDES[`${chamber}:${district}`]
+			const email = sittingEmail
+				|| EMAIL_OVERRIDES[`${chamber}:${district}`]
 				|| `${first}.${rest.join("")}.${chamber}@coleg.gov`;
 
 			const title = chamber === "senate" ? "Senator" : "Representative";
@@ -778,7 +777,7 @@ Sincerely,
 				const option = document.createElement("option");
 				option.value = i;
 				option.textContent = entry
-					? `${label} District ${i} – ${entry[0]}${entry[1] ? " & Elect " + entry[1] : ""}`
+					? `${label} District ${i} – ${entry[0]}${entry[2] ? " & Elect " + entry[2] : ""}`
 					: `${label} District ${i} – (roster entry needed)`;
 				select.appendChild(option);
 			}
