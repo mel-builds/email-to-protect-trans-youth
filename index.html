@@ -464,18 +464,24 @@
 
 	<script>
 		/* =====================================================================
-         * 1. DATA: edit these when the roster changes
-         * ===================================================================== */
+		 * PART 1: DATA — edit this section when the roster changes
+		 * ===================================================================== */
 
 		// Subject line used for every email
 		const SUBJECT = "Legislative Action Required: Oppose and Repeal Propositions 134 and 135";
 
 		/*
-         * State legislators, keyed by district number.
-         * Format: district: [sitting member, sitting email, elect name?, elect email?]
-         * If the sitting email is left blank (""), it is generated as first.last.<chamber>@coleg.gov
-         * unless the address is listed in EMAIL_OVERRIDES below.
-         */
+		 * State legislators, keyed by district number.
+		 *
+		 * Each line looks like this:
+		 *   district: ["Sitting Name", "sitting email", "Elect Name", "elect email"],
+		 *
+		 * - The last two items are optional (only for seats with an incoming member).
+		 * - Leave the sitting email as "" to build it automatically as
+		 *   first.last.<chamber>@coleg.gov (or use EMAIL_OVERRIDES below).
+		 * - Every item needs a comma between it and the next one!
+		 *   A missing comma breaks the whole page.
+		 */
 		const SENATE = {
 			1: ["Byron Pelton", ""],
 			2: ["Lisa Frizell", ""],
@@ -506,7 +512,7 @@
 			27: ["Tom Sullivan", ""],
 			28: ["Mike Weissman", ""],
 			29: ["Iman Jodeh", ""],
-			30: ["John Carson", "" "Kevin Leung", "kevin@kevinfordougco.com"],
+			30: ["John Carson", "", "Kevin Leung", "kevin@kevinfordougco.com"],
 			31: ["Matt Ball", ""],
 			32: ["Robert Rodriguez", "", "Emily Sirota", "emily.sirota.house@coleg.gov"],
 			33: ["James Coleman", ""],
@@ -582,18 +588,18 @@
 			65: ["Lori Garcia Sander", "lori.garciasander.house@coleg.gov"]
 		};
 
-		// Addresses that don't follow the first.last.<chamber>@coleg.gov pattern.
+		// Emails that don't follow the first.last.<chamber>@coleg.gov pattern.
 		// Key format: "<chamber>:<district>"
 		const EMAIL_OVERRIDES = {
-			"senate:4": "mark.baisley@senate.co.com",       // as listed in the official directory
+			"senate:4": "mark.baisley@senate.co.com",   // as listed in the official directory
 			"house:54": "matthew.soper.house@coleg.gov"
 		};
 
 		/*
-         * Capitol office phone numbers for sitting members (all are 303-866-XXXX).
-         * Only the last four digits are stored. The array position is district - 1,
-         * so the first entry is District 1.
-         */
+		 * Capitol office phone numbers (all are 303-866-XXXX).
+		 * Only the last four digits are stored.
+		 * The first number is District 1, the second is District 2, and so on.
+		 */
 		const SENATE_PHONES = [
 			6360, 4869, 4878, 4877, 5292, 4875, 3077, 4871, 4835, 2737,   // Districts 1-10
 			6364, 4880, 4855, 4841, 4853, 4883, 5291, 4872, 4840, 4859,   // Districts 11-20
@@ -612,24 +618,21 @@
 		];
 
 		// Governor: the sitting governor and the governor-elect.
-		// Phone numbers are digits only, with the area code.
+		// Phone numbers are 10 digits, no dashes or spaces.
 		const GOVERNOR = {
-			current: {
-				name: "Jared Polis",
-				form: "https://www.colorado.gov/governor/contact-us",
-				phone: "3038662471"
-			},
-			elect: {
-				name: "Phil Weiser",
-				email: "teamphil@philforcolorado.com",   // from the contact-list CSV
-				phone: "7209489171"                  // campaign phone
-			}
+			currentName: "Jared Polis",
+			currentForm: "https://www.colorado.gov/governor/contact-us",
+			currentPhone: "3038662471",
+
+			electName: "Phil Weiser",
+			electEmail: "teamphil@philforcolorado.com",
+			electPhone: "7209489171"   // campaign phone
 		};
 
 		/* =====================================================================
-         * 2. DEFAULT MESSAGE
-         * [RECIPIENT] and [YOUR NAME] are swapped in when an email is built.
-         * ===================================================================== */
+		 * PART 2: DEFAULT MESSAGE
+		 * [RECIPIENT] and [YOUR NAME] are replaced when an email is built.
+		 * ===================================================================== */
 
 		const DEFAULT_MESSAGE = `Dear [RECIPIENT],
 
@@ -641,7 +644,7 @@ As an elected representative, you hold the authority to introduce, co-sponsor, o
 
 I request that you take a firm stand by sponsoring or supporting legislative efforts to counter and repeal the provisions of Proposition 134 and Proposition 135. I would appreciate hearing your position on this issue and learning about any steps you plan to take to protect trans youth in Colorado.
 
-We voted for you because you talked the talk, now it's time to walk the walk. Protect trans youth. 
+We voted for you because you talked the talk, now it's time to walk the walk. Protect trans youth.
 
 Thank you for your time and representation.
 
@@ -650,280 +653,322 @@ Sincerely,
 [YOUR NAME]`;
 
 		/* =====================================================================
-         * 3. HELPERS
-         * ===================================================================== */
+		 * PART 3: SMALL HELPER FUNCTIONS
+		 * ===================================================================== */
 
-		// Shorthand for document.getElementById
-		const $ = id => document.getElementById(id);
+		// Short way to grab an element by its id
+		function byId(id) {
+			return document.getElementById(id);
+		}
 
-		// Latest email bodies and recipients, kept so the "Copy" buttons can use them
-		const state = {
+		// The text each "Copy" button should copy. Updated every time the page refreshes.
+		const copyTexts = {
 			govBody: "",
 			senateBody: "",
 			houseBody: "",
-			senateEmails: [],
-			houseEmails: []
+			senateEmails: "",
+			houseEmails: ""
 		};
 
-		// Builds the final email text from the message box, filling in the placeholders
-		function getBodyText(senderName, recipient) {
-			const name = senderName.trim() || "[YOUR NAME]";
-			return $("msg").value
-				.split("[YOUR NAME]").join(name)
-				.split("[RECIPIENT]").join(recipient);
+		// Takes the message box text and fills in [YOUR NAME] and [RECIPIENT]
+		function buildMessage(recipient) {
+			let senderName = byId("userName").value.trim();
+			if (senderName === "") {
+				senderName = "[YOUR NAME]";
+			}
+			return byId("msg").value
+				.replaceAll("[YOUR NAME]", senderName)
+				.replaceAll("[RECIPIENT]", recipient);
 		}
 
-		// Looks up one state legislator and works out who to email.
-		// Returns null if the district has no roster entry.
-		function stateContact(chamber, district, roster) {
-			const entry = roster[district];
-			if (!entry) return null;
-
-			const [sitting, sittingEmail, elect, electEmail] = entry;
-
-			// Turn "María González" into "maria" + "gonzalez" for the email pattern
-			const [first, ...rest] = sitting
+		// Builds a coleg.gov email from a name.
+		// Example: makeEmail("María González", "house") -> "maria.gonzalez.house@coleg.gov"
+		function makeEmail(fullName, chamber) {
+			const cleanName = fullName
 				.normalize("NFD")
-				.replace(/[\u0300-\u036f]/g, "")   // strip accents
-				.toLowerCase()
-				.replace(/[^a-z ]/g, "")
-				.split(" ");
+				.replace(/[̀-ͯ]/g, "")   // remove accents (á -> a)
+				.toLowerCase();
 
-			const email = sittingEmail
-				|| EMAIL_OVERRIDES[`${chamber}:${district}`]
-				|| `${first}.${rest.join("")}.${chamber}@coleg.gov`;
+			const words = cleanName.split(" ");
+			const firstName = words[0];
+			const lastName = words.slice(1).join("");   // "Zamora Wilson" -> "zamorawilson"
 
-			const title = chamber === "senate" ? "Senator" : "Representative";
-
-			return {
-				names: elect ? `${sitting} & ${title}-elect ${elect}` : sitting,
-				greeting: `${title} ${sitting}` + (elect ? ` & ${title}-elect ${elect}` : ""),
-				elect,
-				electEmail,
-				emails: [email, electEmail].filter(Boolean)   // drop a missing elect email
-			};
+			return firstName + "." + lastName + "." + chamber + "@coleg.gov";
 		}
 
-		// Formats "3038662471" as "(303) 866-2471"
-		const formatPhone = digits => `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+		// Turns "3038662471" into "(303) 866-2471"
+		function formatPhone(digits) {
+			return "(" + digits.slice(0, 3) + ") " + digits.slice(3, 6) + "-" + digits.slice(6);
+		}
 
-		// Builds the three ways to open an email: default mail app, Gmail, Outlook
-		function mailLinks(emails, body) {
-			const to = emails.join(",");
+		// Makes a link clickable (with a URL) or greyed out (when url is empty)
+		function setLink(link, url) {
+			if (url) {
+				link.href = url;
+				link.removeAttribute("aria-disabled");
+			} else {
+				link.removeAttribute("href");
+				link.setAttribute("aria-disabled", "true");
+			}
+		}
+
+		// Sets up the "Open in Mail App", "Gmail" and "Outlook" buttons
+		function setEmailButtons(mailId, gmailId, outlookId, emailList, body) {
+			if (emailList.length === 0) {
+				setLink(byId(mailId), "");
+				setLink(byId(gmailId), "");
+				setLink(byId(outlookId), "");
+				return;
+			}
+
+			const to = emailList.join(",");
 			const subject = encodeURIComponent(SUBJECT);
 			const text = encodeURIComponent(body);
 			const toEncoded = encodeURIComponent(to);
 
-			return {
-				mail: `mailto:${to}?subject=${subject}&body=${text}`,
-				gmail: `https://mail.google.com/mail/?view=cm&fs=1&to=${toEncoded}&su=${subject}&body=${text}`,
-				outlook: `https://outlook.live.com/mail/0/deeplink/compose?to=${toEncoded}&subject=${subject}&body=${text}`
-			};
+			setLink(byId(mailId), "mailto:" + to + "?subject=" + subject + "&body=" + text);
+			setLink(byId(gmailId), "https://mail.google.com/mail/?view=cm&fs=1&to=" + toEncoded + "&su=" + subject + "&body=" + text);
+			setLink(byId(outlookId), "https://outlook.live.com/mail/0/deeplink/compose?to=" + toEncoded + "&subject=" + subject + "&body=" + text);
 		}
 
-		// Points a link at a URL, or dims it and removes the URL when there isn't one
-		function setLink(element, href) {
-			if (href) {
-				element.href = href;
-				element.removeAttribute("aria-disabled");
+		// Sets up a "📞 Call" button. Pass an empty phone to grey it out.
+		function setPhoneButton(link, phone, label) {
+			if (phone) {
+				link.textContent = "📞 " + label + " " + formatPhone(phone);
+				setLink(link, "tel:+1" + phone);
 			} else {
-				element.removeAttribute("href");
-				element.setAttribute("aria-disabled", "true");
+				link.textContent = "📞 Call";
+				setLink(link, "");
 			}
 		}
 
-		// Sets the mail app, Gmail and Outlook buttons together.
-		// ids = [mailButtonId, gmailButtonId, outlookButtonId]
-		function setMailButtons(ids, emails, body) {
-			const links = emails.length ? mailLinks(emails, body) : {};
-			setLink($(ids[0]), links.mail);
-			setLink($(ids[1]), links.gmail);
-			setLink($(ids[2]), links.outlook);
+		// Copies text to the clipboard, then shows "Copied!" for 2 seconds
+		function copyText(text, toast) {
+			navigator.clipboard.writeText(text)
+				.catch(function () {
+					// Older browsers: copy using a hidden text box instead
+					const box = document.createElement("textarea");
+					box.value = text;
+					document.body.appendChild(box);
+					box.select();
+					document.execCommand("copy");
+					box.remove();
+				})
+				.finally(function () {
+					toast.classList.add("show");
+					setTimeout(function () {
+						toast.classList.remove("show");
+					}, 2000);
+				});
 		}
 
-		// Turns a link into a tap-to-call button (or dims it when there's no number)
-		function setPhone(element, digits, label = "Call") {
-			element.textContent = digits ? `📞 ${label} ${formatPhone(digits)}` : "📞 Call";
-			setLink(element, digits ? `tel:+1${digits}` : null);
-		}
-
-		// Shows the "Copied!" message for two seconds
-		function showToast(element) {
-			element.classList.add("show");
-			setTimeout(() => element.classList.remove("show"), 2000);
-		}
-
-		// Copies text to the clipboard, with a fallback for browsers that block the modern API
-		async function copyText(text, toastElement) {
-			try {
-				await navigator.clipboard.writeText(text);
-			} catch {
-				const temp = document.createElement("textarea");
-				temp.value = text;
-				temp.style.position = "fixed";
-				temp.style.opacity = "0";
-				document.body.appendChild(temp);
-				temp.select();
-				try { document.execCommand("copy"); } catch { /* nothing more we can do */ }
-				temp.remove();
-			}
-			showToast(toastElement);
-		}
-
-		// Fills a district dropdown with one option per district
-		function fillSelect(select, roster, count, label) {
-			for (let i = 1; i <= count; i++) {
-				const entry = roster[i];
+		// Adds one <option> per district to a dropdown
+		function fillDropdown(select, roster, districtCount, label) {
+			for (let district = 1; district <= districtCount; district++) {
+				const entry = roster[district];
 				const option = document.createElement("option");
-				option.value = i;
-				option.textContent = entry
-					? `${label} District ${i} – ${entry[0]}${entry[2] ? " & Elect " + entry[2] : ""}`
-					: `${label} District ${i} – (roster entry needed)`;
+				option.value = district;
+
+				if (!entry) {
+					option.textContent = label + " District " + district + " – (roster entry needed)";
+				} else if (entry[2]) {
+					option.textContent = label + " District " + district + " – " + entry[0] + " & Elect " + entry[2];
+				} else {
+					option.textContent = label + " District " + district + " – " + entry[0];
+				}
+
 				select.appendChild(option);
 			}
 		}
 
 		/* =====================================================================
-         * 4. RENDERING: refresh every card from the current form values
-         * ===================================================================== */
+		 * PART 4: UPDATE THE CARDS
+		 * ===================================================================== */
 
-		// Updates the State Senate or State House card
-		// kind is "senate" or "house" (it also prefixes the element ids)
-		function renderState(kind, district, roster, name, phones) {
-			const info = $(kind + "Info");
-			const title = $(kind + "Title");
-			const buttonIds = [kind + "Btn", kind + "Gmail", kind + "Outlook"];
-			const generic = kind === "senate" ? "State Senator" : "State Representative";
-			const contact = district ? stateContact(kind, district, roster) : null;
+		// Updates the Senate card or the House card.
+		// chamber is "senate" or "house" (it also starts each element id, like "senateInfo").
+		function updateLegislatorCard(chamber) {
+			const isSenate = chamber === "senate";
+			const roster = isSenate ? SENATE : HOUSE;
+			const phones = isSenate ? SENATE_PHONES : HOUSE_PHONES;
+			const title = isSenate ? "Senator" : "Representative";
+			const shortTitle = isSenate ? "Sen." : "Rep.";
+			const chamberName = isSenate ? "Senate" : "House";
 
-			// No district chosen, or the district isn't in the roster yet
-			if (!contact) {
-				title.textContent = `Email Your Colorado ${generic}`;
-				info.textContent = district
+			const district = byId(chamber + "Select").value;   // "" when nothing is picked
+			const entry = roster[district];
+
+			// Nothing picked yet (or no data for this district): reset the card
+			if (!entry) {
+				byId(chamber + "Title").textContent = "Email Your Colorado State " + title;
+				byId(chamber + "Info").textContent = district
 					? "No roster entry for this district yet. Use the Find State Districts link above."
-					: `Recipients: Select a ${kind === "senate" ? "Senate" : "House"} district above`;
-				state[kind + "Emails"] = [];
-				state[kind + "Body"] = getBodyText(name, generic);
-				setMailButtons(buttonIds, [], "");
-				setPhone($(kind + "Phone"), null);
+					: "Recipients: Select a " + chamberName + " district above";
+				copyTexts[chamber + "Emails"] = "";
+				copyTexts[chamber + "Body"] = buildMessage("State " + title);
+				setEmailButtons(chamber + "Btn", chamber + "Gmail", chamber + "Outlook", [], "");
+				setPhoneButton(byId(chamber + "Phone"), "", "");
 				return;
 			}
 
-			// Card heading and recipient list
-			const prefix = kind === "senate" ? "Sen." : "Rep.";
-			const chamberName = kind === "senate" ? "Senate" : "House";
-			title.textContent = `Email ${prefix} ${contact.names} (${chamberName} District ${district})`;
+			// Read the roster line
+			const name = entry[0];
+			let email = entry[1];
+			const electName = entry[2] || "";
+			const electEmail = entry[3] || "";
 
-			let recipients = `Recipients: ${contact.emails.join(", ")}`;
-			if (contact.elect && !contact.electEmail) {
-				recipients += ` (no email on file for ${contact.elect} yet)`;
+			// No email listed? Use an override, or build one from the name
+			if (email === "") {
+				email = EMAIL_OVERRIDES[chamber + ":" + district] || makeEmail(name, chamber);
 			}
-			info.textContent = recipients;
 
-			// Email body, buttons and phone number
-			state[kind + "Emails"] = contact.emails;
-			state[kind + "Body"] = getBodyText(name, contact.greeting);
-			setMailButtons(buttonIds, contact.emails, state[kind + "Body"]);
+			// Who gets the email
+			const emailList = [email];
+			if (electEmail) {
+				emailList.push(electEmail);
+			}
 
-			const extension = phones[district - 1];
-			setPhone($(kind + "Phone"), extension ? "303866" + extension : null);
+			// Card heading, recipients and greeting
+			let names = name;
+			let greeting = title + " " + name;
+			if (electName) {
+				names = name + " & " + title + "-elect " + electName;
+				greeting = greeting + " & " + title + "-elect " + electName;
+			}
+
+			byId(chamber + "Title").textContent =
+				"Email " + shortTitle + " " + names + " (" + chamberName + " District " + district + ")";
+
+			let recipientText = "Recipients: " + emailList.join(", ");
+			if (electName && !electEmail) {
+				recipientText += " (no email on file for " + electName + " yet)";
+			}
+			byId(chamber + "Info").textContent = recipientText;
+
+			// Email buttons and copy text
+			const body = buildMessage(greeting);
+			copyTexts[chamber + "Body"] = body;
+			copyTexts[chamber + "Emails"] = emailList.join(", ");
+			setEmailButtons(chamber + "Btn", chamber + "Gmail", chamber + "Outlook", emailList, body);
+
+			// Phone button (district 1 is position 0 in the list)
+			const lastFour = phones[district - 1];
+			const phone = lastFour ? "303866" + lastFour : "";
+			setPhoneButton(byId(chamber + "Phone"), phone, "Call");
 		}
 
-		// Updates the Governor card (current governor plus governor-elect)
-		function renderGovernor(name) {
-			const current = GOVERNOR.current;
-			const elect = GOVERNOR.elect;
-			const electButtonIds = ["govElectBtn", "govElectGmail", "govElectOutlook"];
+		// Updates the Governor card
+		function updateGovernorCard() {
+			const g = GOVERNOR;
+			const currentLastName = g.currentName.split(" ").pop();
 
 			// Summary line
-			let info = `Gov. ${current.name} (current)`;
-			if (elect.name) {
-				info += ` · Governor-elect ${elect.name} takes office next January`;
-				info += elect.email ? ` (${elect.email})` : " (no public contact on file yet)";
+			let info = "Gov. " + g.currentName + " (current)";
+			if (g.electName) {
+				info += " · Governor-elect " + g.electName + " takes office next January";
+				info += g.electEmail ? " (" + g.electEmail + ")" : " (no public contact on file yet)";
 			}
-			$("govInfo").textContent = info;
+			byId("govInfo").textContent = info;
 
 			// Current governor: webform and phone
-			$("govForm").href = current.form;
-			$("govForm").textContent = `Webform: Gov. ${current.name}`;
-			setPhone($("govPhone"), current.phone, `Gov. ${current.name.split(" ").pop()}`);
+			byId("govForm").href = g.currentForm;
+			byId("govForm").textContent = "Webform: Gov. " + g.currentName;
+			setPhoneButton(byId("govPhone"), g.currentPhone, "Gov. " + currentLastName);
 
-			// Text used by the "Copy Email Body" button
-			state.govBody = getBodyText(
-				name,
-				`Governor ${current.name}` + (elect.name ? ` & Governor-elect ${elect.name}` : "")
-			);
+			// Text for the "Copy Email Body" button
+			let greeting = "Governor " + g.currentName;
+			if (g.electName) {
+				greeting += " & Governor-elect " + g.electName;
+			}
+			copyTexts.govBody = buildMessage(greeting);
 
-			// Governor-elect: show buttons only for the details we actually have
-			const hasEmail = Boolean(elect.name && elect.email);
-			const hasPhone = Boolean(elect.name && elect.phone);
+			// Governor-elect: only show the buttons we have details for
+			const hasEmail = Boolean(g.electName && g.electEmail);
+			const hasPhone = Boolean(g.electName && g.electPhone);
 
-			electButtonIds.forEach(id => { $(id).hidden = !hasEmail; });
-			$("govElectPhone").hidden = !hasPhone;
+			byId("govElectBtn").hidden = !hasEmail;
+			byId("govElectGmail").hidden = !hasEmail;
+			byId("govElectOutlook").hidden = !hasEmail;
+			byId("govElectPhone").hidden = !hasPhone;
 
 			if (hasEmail) {
-				setMailButtons(electButtonIds, [elect.email], getBodyText(name, `Governor-elect ${elect.name}`));
-				$("govElectBtn").textContent = `Email Gov.-elect ${elect.name}`;
+				const body = buildMessage("Governor-elect " + g.electName);
+				setEmailButtons("govElectBtn", "govElectGmail", "govElectOutlook", [g.electEmail], body);
+				byId("govElectBtn").textContent = "Email Gov.-elect " + g.electName;
 			}
 			if (hasPhone) {
-				setPhone($("govElectPhone"), elect.phone, `${elect.name.split(" ").pop()} campaign`);
+				const electLastName = g.electName.split(" ").pop();
+				setPhoneButton(byId("govElectPhone"), g.electPhone, electLastName + " campaign");
 			}
 		}
 
-		// Updates the call script with the name and the selected legislator
-		function renderCallScript(name, senateDistrict, houseDistrict) {
-			let who = "my representative";
-			if (SENATE[senateDistrict]) who = `Senator ${SENATE[senateDistrict][0]}`;
-			else if (HOUSE[houseDistrict]) who = `Representative ${HOUSE[houseDistrict][0]}`;
+		// Updates the call script at the bottom of the page
+		function updateCallScript() {
+			const senateEntry = SENATE[byId("senateSelect").value];
+			const houseEntry = HOUSE[byId("houseSelect").value];
 
-			$("scriptName").textContent = name.trim() || "[YOUR NAME]";
-			$("scriptRep").textContent = who;
+			let who = "my representative";
+			if (senateEntry) {
+				who = "Senator " + senateEntry[0];
+			} else if (houseEntry) {
+				who = "Representative " + houseEntry[0];
+			}
+
+			byId("scriptName").textContent = byId("userName").value.trim() || "[YOUR NAME]";
+			byId("scriptRep").textContent = who;
 		}
 
-		// Re-renders everything. Runs on load and whenever an input changes.
-		function update() {
-			const name = $("userName").value;
-			const senateDistrict = $("senateSelect").value;
-			const houseDistrict = $("houseSelect").value;
-
-			renderCallScript(name, senateDistrict, houseDistrict);
-			renderGovernor(name);
-			renderState("senate", senateDistrict, SENATE, name, SENATE_PHONES);
-			renderState("house", houseDistrict, HOUSE, name, HOUSE_PHONES);
+		// Refreshes everything. Runs on page load and whenever an input changes.
+		function updatePage() {
+			updateCallScript();
+			updateGovernorCard();
+			updateLegislatorCard("senate");
+			updateLegislatorCard("house");
 		}
 
 		/* =====================================================================
-         * 5. STARTUP AND EVENTS
-         * ===================================================================== */
+		 * PART 5: START THE PAGE
+		 * ===================================================================== */
 
 		// Fill the dropdowns and the message box
-		fillSelect($("senateSelect"), SENATE, 35, "Senate");
-		fillSelect($("houseSelect"), HOUSE, 65, "House");
-		$("msg").value = DEFAULT_MESSAGE;
+		fillDropdown(byId("senateSelect"), SENATE, 35, "Senate");
+		fillDropdown(byId("houseSelect"), HOUSE, 65, "House");
+		byId("msg").value = DEFAULT_MESSAGE;
 
-		// Refresh the cards whenever the person changes something
-		$("userName").addEventListener("input", update);
-		$("msg").addEventListener("input", update);
-		$("senateSelect").addEventListener("change", update);
-		$("houseSelect").addEventListener("change", update);
+		// Refresh the cards whenever the person types or picks something
+		byId("userName").addEventListener("input", updatePage);
+		byId("msg").addEventListener("input", updatePage);
+		byId("senateSelect").addEventListener("change", updatePage);
+		byId("houseSelect").addEventListener("change", updatePage);
 
-		// Restore the original message
-		$("resetMsg").addEventListener("click", () => {
-			$("msg").value = DEFAULT_MESSAGE;
-			update();
+		// "Reset" puts the original message back
+		byId("resetMsg").addEventListener("click", function () {
+			byId("msg").value = DEFAULT_MESSAGE;
+			updatePage();
 		});
 
 		// Copy buttons
-		$("copyBtn").addEventListener("click", () =>
-			copyText(getBodyText($("userName").value, "Representative / Senator"), $("copyToast")));
-		$("govCopyBody").addEventListener("click", () => copyText(state.govBody, $("govToast")));
-		$("senateCopyBody").addEventListener("click", () => copyText(state.senateBody, $("senateToast")));
-		$("houseCopyBody").addEventListener("click", () => copyText(state.houseBody, $("houseToast")));
-		$("senateCopyEmail").addEventListener("click", () => copyText(state.senateEmails.join(", "), $("senateToast")));
-		$("houseCopyEmail").addEventListener("click", () => copyText(state.houseEmails.join(", "), $("houseToast")));
+		byId("copyBtn").addEventListener("click", function () {
+			copyText(buildMessage("Representative / Senator"), byId("copyToast"));
+		});
+		byId("govCopyBody").addEventListener("click", function () {
+			copyText(copyTexts.govBody, byId("govToast"));
+		});
+		byId("senateCopyBody").addEventListener("click", function () {
+			copyText(copyTexts.senateBody, byId("senateToast"));
+		});
+		byId("houseCopyBody").addEventListener("click", function () {
+			copyText(copyTexts.houseBody, byId("houseToast"));
+		});
+		byId("senateCopyEmail").addEventListener("click", function () {
+			copyText(copyTexts.senateEmails, byId("senateToast"));
+		});
+		byId("houseCopyEmail").addEventListener("click", function () {
+			copyText(copyTexts.houseEmails, byId("houseToast"));
+		});
 
 		// First render
-		update();
+		updatePage();
 	</script>
 </body>
 </html>
